@@ -32,7 +32,7 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.719337, -0.427676, 0.547401, 0, 0.788011, 0.615661, -0.694661, -0.442868, 0.566845, 0, 0, 0 )
+transform = Transform( 0.719337, -0.427676, 0.547401, 0, 0.788011, 0.615661, -0.694661, -0.442868, 0.566845, 0, 0.344217, 0 )
 input_ray_pickable = false
 mass = 1.0
 gravity_scale = 2.0
