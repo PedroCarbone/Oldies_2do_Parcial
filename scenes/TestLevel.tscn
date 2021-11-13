@@ -99,6 +99,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0647025, 0.233016, -0.183991 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
@@ -129,6 +130,7 @@ width = 10.0
 depth = 10.0
 
 [node name="CSGCylinder" type="CSGCylinder" parent="PlataformaCSG"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.44397, 0 )
 operation = 2
 radius = 3.005
 height = 7.992
@@ -177,3 +179,9 @@ operation = 2
 width = 35.4236
 height = 14.968
 depth = 32.7494
+
+[node name="CSGPolygon2" type="CSGPolygon" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44038, 0.59947, 30.8015 )
+use_collision = true
+polygon = PoolVector2Array( 0.0110122, 0.0102477, -0.275619, 2.71872, 6.29169, 0.0124421, 1, 0 )
+depth = 7.2
