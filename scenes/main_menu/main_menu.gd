@@ -13,5 +13,5 @@ func _on_settings_pressed():
 	pass
 
 func _on_creditos_pressed():
-	get_tree().change_scene("")
+	get_tree().change_scene("res://scenes/Creditos/Creditos.tscn")
 	pass

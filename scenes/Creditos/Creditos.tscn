@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Creditos/Creditos.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Square.ttf" type="DynamicFontData" id=2]
@@ -114,9 +114,36 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Button:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 6.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Button:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="DynamicFont" id=2]
-size = 150
+size = 300
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -124,7 +151,7 @@ size = 80
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 60
+size = 100
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -153,6 +180,7 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Creditos"
 anims/Creditos = SubResource( 1 )
+anims/RESET = SubResource( 6 )
 
 [node name="texto" type="Label" parent="."]
 margin_right = 40.0
@@ -162,13 +190,10 @@ __meta__ = {
 }
 
 [node name="titulo" type="RichTextLabel" parent="texto"]
-anchor_left = 0.5
-anchor_right = 0.891
-anchor_bottom = 0.068
-margin_left = 120.618
-margin_top = 292.445
-margin_right = 960.978
-margin_bottom = 453.493
+margin_left = 66.0
+margin_top = 27.0
+margin_right = 1691.0
+margin_bottom = 342.0
 rect_pivot_offset = Vector2( -425.841, -130.611 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
@@ -181,10 +206,10 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.891
 anchor_bottom = 0.068
-margin_left = 128.618
-margin_top = 454.445
-margin_right = 681.978
-margin_bottom = 544.493
+margin_left = 62.1591
+margin_top = 314.381
+margin_right = 946.519
+margin_bottom = 457.429
 rect_pivot_offset = Vector2( -425.841, -130.611 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "Oldies Team"
@@ -193,20 +218,21 @@ __meta__ = {
 }
 
 [node name="nombres" type="Label" parent="texto"]
-margin_left = 1113.99
-margin_top = 381.371
-margin_right = 1647.99
-margin_bottom = 713.371
+margin_left = 916.0
+margin_top = 291.0
+margin_right = 1544.0
+margin_bottom = 755.0
 custom_fonts/font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="agus" type="Label" parent="texto/nombres"]
-margin_left = -2.0
-margin_top = 5.0
-margin_right = 453.0
-margin_bottom = 73.0
+margin_left = -9.84094
+margin_top = 4.38109
+margin_right = 733.159
+margin_bottom = 115.381
+rect_scale = Vector2( 1.00352, 1.11833 )
 rect_pivot_offset = Vector2( -1655.96, -252.029 )
 custom_fonts/font = SubResource( 4 )
 text = "Agustín Bosco"
@@ -215,10 +241,10 @@ __meta__ = {
 }
 
 [node name="peter" type="Label" parent="texto/nombres"]
-margin_left = -2.0
-margin_top = 79.0
-margin_right = 433.0
-margin_bottom = 144.0
+margin_left = -6.84094
+margin_top = 147.381
+margin_right = 714.159
+margin_bottom = 254.381
 rect_pivot_offset = Vector2( -1655.96, -252.029 )
 custom_fonts/font = SubResource( 4 )
 text = "Pedro Carbone"
@@ -227,10 +253,11 @@ __meta__ = {
 }
 
 [node name="flax" type="Label" parent="texto/nombres"]
-margin_left = -4.0
-margin_top = 158.0
-margin_right = 340.0
-margin_bottom = 222.0
+margin_left = -297.841
+margin_top = 209.381
+margin_right = 272.159
+margin_bottom = 314.381
+rect_scale = Vector2( 1.17314, 1.17314 )
 rect_pivot_offset = Vector2( -1655.96, -252.029 )
 custom_fonts/font = SubResource( 4 )
 text = "lino hassan"
@@ -239,10 +266,10 @@ __meta__ = {
 }
 
 [node name="spooks" type="Label" parent="texto/nombres"]
-margin_left = -4.0
-margin_top = 246.0
-margin_right = 484.0
-margin_bottom = 310.0
+margin_left = -8.84094
+margin_top = 383.381
+margin_right = 1073.32
+margin_bottom = 488.381
 rect_pivot_offset = Vector2( -1800.41, 0 )
 custom_fonts/font = SubResource( 4 )
 text = "Milagros Orozco"
@@ -251,10 +278,10 @@ __meta__ = {
 }
 
 [node name="juanan" type="Label" parent="texto/nombres"]
-margin_left = -14.3496
-margin_top = 330.085
-margin_right = 519.65
-margin_bottom = 394.085
+margin_left = -8.84094
+margin_top = 505.381
+margin_right = 876.159
+margin_bottom = 610.381
 rect_pivot_offset = Vector2( -1800.41, 0 )
 custom_fonts/font = SubResource( 4 )
 text = "Juan Andrés Viola"
@@ -265,10 +292,13 @@ __meta__ = {
 [node name="Button" type="Button" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -70.0
-margin_right = 769.0
+margin_left = 215.159
+margin_top = -356.619
+margin_right = 665.159
+margin_bottom = -206.619
 custom_fonts/font = SubResource( 5 )
-text = "Volver al menú principal "
+disabled = true
+text = "menú principal"
 __meta__ = {
 "_edit_use_anchors_": false
 }
