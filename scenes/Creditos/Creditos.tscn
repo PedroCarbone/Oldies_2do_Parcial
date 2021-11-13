@@ -1,0 +1,116 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Creditos/Creditos.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Creditos"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("texto/titulo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("texto/nombres:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("texto/sunpunk_team:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.15906
+margin_top = -2.3811
+margin_right = -5.15906
+margin_bottom = -2.3811
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Creditos"
+anims/Creditos = SubResource( 1 )
+
+[node name="texto" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="titulo" type="RichTextLabel" parent="texto"]
+anchor_left = 0.5
+anchor_right = 0.891
+anchor_bottom = 0.068
+margin_left = 144.0
+margin_top = 194.0
+margin_right = 270.36
+margin_bottom = 236.048
+rect_pivot_offset = Vector2( -425.841, -130.611 )
+text = "Créditos!
+"
+
+[node name="sunpunk_team" type="RichTextLabel" parent="texto"]
+anchor_left = 0.5
+anchor_right = 0.891
+anchor_bottom = 0.068
+margin_left = 144.0
+margin_top = 194.0
+margin_right = 270.36
+margin_bottom = 236.048
+rect_pivot_offset = Vector2( -425.841, -130.611 )
+text = "
+Sunpunk Team"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nombres" type="Label" parent="texto"]
+margin_left = 672.385
+margin_top = 226.167
+margin_right = 782.385
+margin_bottom = 308.167
+text = "Agustín Bosco
+Pedro Carbone
+Lino Hassan 
+Milagros Orozco
+Juan Andrés Viola"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -20.0
+margin_right = 171.0
+text = "Volver al menú principal "
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
