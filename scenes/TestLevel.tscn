@@ -1,0 +1,179 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 50, 1, 50 )
+
+[sub_resource type="PlaneMesh" id=2]
+size = Vector2( 100, 100 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 20, 20, 20 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 2, 2, 2 )
+
+[sub_resource type="CubeMesh" id=5]
+size = Vector3( 4, 4, 4 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="CylinderShape" id=7]
+radius = 20.0
+height = 1.0
+
+[sub_resource type="CylinderMesh" id=8]
+top_radius = 20.0
+bottom_radius = 20.0
+height = 1.0
+
+[sub_resource type="Animation" id=9]
+resource_name = "Nueva Animación"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MovingPlatform:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( -1.3, -1.3 ),
+"update": 0,
+"values": [ Vector3( 72.6068, 0, 0 ), Vector3( 72.6068, 9.9501, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MovingPlatform:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 72.6068, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MovingPlatform:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MovingPlatform:transform")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6068, 0, 0 ) ]
+}
+
+[sub_resource type="SpatialMaterial" id=11]
+
+[node name="Level" type="Spatial"]
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 32.063, 3.23409 )
+shadow_enabled = true
+__meta__ = {
+"_editor_description_": "Esta apuntando directo hacia abajo para que sirva de guia de posición"
+}
+
+[node name="PlataformaStatic" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3914, 2.70361, -11.151 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PlataformaStatic"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="PlataformaStatic"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="PlataformaCSG" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8668, 6.34563, 0 )
+material_override = SubResource( 6 )
+use_collision = true
+width = 10.0
+depth = 10.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="PlataformaCSG"]
+operation = 2
+radius = 3.005
+height = 7.992
+
+[node name="MovingPlatform" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6068, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MovingPlatform"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="MovingPlatform"]
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform"]
+root_node = NodePath("../..")
+autoplay = "Nueva Animación"
+playback_process_mode = 0
+"anims/Nueva Animación" = SubResource( 9 )
+anims/RESET = SubResource( 10 )
+
+[node name="CSGPolygon" type="CSGPolygon" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.0529, 0.234406, 30.5465 )
+material_override = SubResource( 11 )
+use_collision = true
+polygon = PoolVector2Array( 4.00272, 10.6924, 7.46941, 9.86978, 9.96661, 7.43134, 12.0819, 4.28781, 16.5475, 3.46521, 23.8921, 2.87763, 24.3034, -1.05912, -12.655, -1.38229, -12.42, -0.00148535, -7.80754, 0.233544, -4.9578, 3.52397, -3.87079, 7.66637 )
+depth = 7.07
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+transform = Transform( 0.890396, 0, -0.455187, 0, 1, 0, 0.455187, 0, 0.890396, 38.022, 1.94191, 28.9605 )
+use_collision = true
+radius = 11.3499
+
+[node name="CSGSphere2" type="CSGSphere" parent="CSGSphere"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.44604, -5.39619, 0 )
+radius = 11.0433
+
+[node name="CSGSphere3" type="CSGSphere" parent="CSGSphere"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.986687, -0.199157, 7.72774 )
+operation = 2
+radius = 5.98844
+
+[node name="CSGBox" type="CSGBox" parent="CSGSphere"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.15282, -10.5013, 0 )
+operation = 2
+width = 35.4236
+height = 14.968
+depth = 32.7494

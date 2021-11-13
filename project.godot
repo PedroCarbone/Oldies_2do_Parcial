@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="3D Platformer"
-run/main_scene="res://scenes/Level.tscn"
+config/name="TP2 Template"
+run/main_scene="res://scenes/TestLevel.tscn"
 config/icon="res://icon.png"
 
 [physics]
