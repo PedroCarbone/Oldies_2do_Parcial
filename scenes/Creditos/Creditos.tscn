@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Creditos/Creditos.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Square.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Creditos"
-length = 4.0
+length = 7.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("texto/titulo:modulate")
 tracks/0/interp = 1
@@ -30,7 +31,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("texto/sunpunk_team:modulate")
+tracks/2/path = NodePath("texto/oldies_team:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -41,6 +42,94 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("texto/nombres/agus:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.4, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("texto/nombres/peter:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3, 3.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("texto/nombres/flax:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3.8, 4.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("texto/nombres/spooks:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 4.6, 5.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("texto/nombres/juanan:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 5.4, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Button:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 6.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 150
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+font_data = ExtResource( 2 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -50,6 +139,13 @@ margin_top = -2.3811
 margin_right = -5.15906
 margin_bottom = -2.3811
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fondo" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -69,39 +165,99 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.891
 anchor_bottom = 0.068
-margin_left = 144.0
-margin_top = 194.0
-margin_right = 270.36
-margin_bottom = 236.048
+margin_left = 120.618
+margin_top = 292.445
+margin_right = 960.978
+margin_bottom = 453.493
 rect_pivot_offset = Vector2( -425.841, -130.611 )
-text = "Créditos!
-"
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+text = "CRÉDITOS!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="sunpunk_team" type="RichTextLabel" parent="texto"]
+[node name="oldies_team" type="RichTextLabel" parent="texto"]
 anchor_left = 0.5
 anchor_right = 0.891
 anchor_bottom = 0.068
-margin_left = 144.0
-margin_top = 194.0
-margin_right = 270.36
-margin_bottom = 236.048
+margin_left = 128.618
+margin_top = 454.445
+margin_right = 681.978
+margin_bottom = 544.493
 rect_pivot_offset = Vector2( -425.841, -130.611 )
-text = "
-Sunpunk Team"
+custom_fonts/normal_font = SubResource( 3 )
+text = "Oldies Team"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="nombres" type="Label" parent="texto"]
-margin_left = 672.385
-margin_top = 226.167
-margin_right = 782.385
-margin_bottom = 308.167
-text = "Agustín Bosco
-Pedro Carbone
-Lino Hassan 
-Milagros Orozco
-Juan Andrés Viola"
+margin_left = 1113.99
+margin_top = 381.371
+margin_right = 1647.99
+margin_bottom = 713.371
+custom_fonts/font = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="agus" type="Label" parent="texto/nombres"]
+margin_left = -2.0
+margin_top = 5.0
+margin_right = 453.0
+margin_bottom = 73.0
+rect_pivot_offset = Vector2( -1655.96, -252.029 )
+custom_fonts/font = SubResource( 4 )
+text = "Agustín Bosco"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="peter" type="Label" parent="texto/nombres"]
+margin_left = -2.0
+margin_top = 79.0
+margin_right = 433.0
+margin_bottom = 144.0
+rect_pivot_offset = Vector2( -1655.96, -252.029 )
+custom_fonts/font = SubResource( 4 )
+text = "Pedro Carbone"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="flax" type="Label" parent="texto/nombres"]
+margin_left = -4.0
+margin_top = 158.0
+margin_right = 340.0
+margin_bottom = 222.0
+rect_pivot_offset = Vector2( -1655.96, -252.029 )
+custom_fonts/font = SubResource( 4 )
+text = "lino hassan"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spooks" type="Label" parent="texto/nombres"]
+margin_left = -4.0
+margin_top = 246.0
+margin_right = 484.0
+margin_bottom = 310.0
+rect_pivot_offset = Vector2( -1800.41, 0 )
+custom_fonts/font = SubResource( 4 )
+text = "Milagros Orozco"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="juanan" type="Label" parent="texto/nombres"]
+margin_left = -14.3496
+margin_top = 330.085
+margin_right = 519.65
+margin_bottom = 394.085
+rect_pivot_offset = Vector2( -1800.41, 0 )
+custom_fonts/font = SubResource( 4 )
+text = "Juan Andrés Viola"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -109,8 +265,12 @@ __meta__ = {
 [node name="Button" type="Button" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -20.0
-margin_right = 171.0
+margin_top = -70.0
+margin_right = 769.0
+custom_fonts/font = SubResource( 5 )
 text = "Volver al menú principal "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
