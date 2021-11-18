@@ -22,7 +22,7 @@ vertex_color_use_as_albedo = true
 vertex_color_is_srgb = true
 params_line_width = 3.0
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial2" type="Spatial"]
 script = ExtResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="."]
