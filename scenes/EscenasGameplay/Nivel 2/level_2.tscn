@@ -274,7 +274,6 @@ material/0 = null
 transform = Transform( 5, 0, 0, 0, 0.3, 0, 0, 0, 5, 70.939, 7.355, -20 )
 
 [node name="CollisionShape" type="CollisionShape" parent="plataforma7"]
-shape = SubResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="plataforma7"]
 mesh = SubResource( 5 )
