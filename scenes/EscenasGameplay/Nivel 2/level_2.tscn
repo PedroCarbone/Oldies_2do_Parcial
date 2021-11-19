@@ -32,45 +32,6 @@ top_radius = 20.0
 bottom_radius = 20.0
 height = 1.0
 
-[sub_resource type="Animation" id=10]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("plataforma_dinamica 1:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 72.6068, 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("plataforma_dinamica 1:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("plataforma_dinamica 1:transform")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6068, 0, 0 ) ]
-}
-
 [sub_resource type="Animation" id=9]
 resource_name = "elevador"
 length = 5.0
@@ -87,6 +48,8 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector3( -42.015, 3.72608, -40.3511 ), Vector3( -42.015, 18.0453, -40.3511 ) ]
 }
+
+[sub_resource type="BoxShape" id=14]
 
 [sub_resource type="Animation" id=11]
 length = 0.001
@@ -224,7 +187,7 @@ polygon = PoolVector2Array( 0.0110122, 0.0102477, -0.275619, 2.71872, 6.29169, 0
 depth = 7.2
 
 [node name="plataforma_dinamica 1" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6068, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.015, 3.72608, -40.3511 )
 
 [node name="CollisionShape" type="CollisionShape" parent="plataforma_dinamica 1"]
 shape = SubResource( 7 )
@@ -237,7 +200,6 @@ material/0 = null
 root_node = NodePath("../..")
 autoplay = "elevador"
 playback_process_mode = 0
-anims/RESET = SubResource( 10 )
 anims/elevador = SubResource( 9 )
 
 [node name="plataforma5" type="StaticBody" parent="."]
@@ -274,6 +236,8 @@ material/0 = null
 transform = Transform( 5, 0, 0, 0, 0.3, 0, 0, 0, 5, 70.939, 7.355, -20 )
 
 [node name="CollisionShape" type="CollisionShape" parent="plataforma7"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+shape = SubResource( 14 )
 
 [node name="MeshInstance" type="MeshInstance" parent="plataforma7"]
 mesh = SubResource( 5 )
@@ -296,7 +260,6 @@ shape = SubResource( 4 )
 disabled = true
 
 [node name="MeshInstance" type="MeshInstance" parent="pared"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 5 )
 material/0 = null
 
