@@ -1,0 +1,156 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/EscenasGameplay/Power_Ups/hide.gd" type="Script" id=1]
+
+[sub_resource type="PrismMesh" id=2]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.855722, 1.11661, 1.31101 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("colision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "hide"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("colision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "reset"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("colision:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="hide" type="Area"]
+visible = false
+script = ExtResource( 1 )
+
+[node name="punta" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0.758253, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../colision")
+material/0 = null
+
+[node name="punta3" type="MeshInstance" parent="."]
+transform = Transform( 0.311473, 0.950255, 0, -0.950255, 0.311473, 0, 0, 0, 0.5, 2.16533, -0.864063, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../colision")
+material/0 = null
+
+[node name="punta2" type="MeshInstance" parent="."]
+transform = Transform( 0.311473, -0.950255, 0, 0.950255, 0.311473, 0, 0, 0, 0.5, -2.18229, -0.864063, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../colision")
+material/0 = null
+
+[node name="punta4" type="MeshInstance" parent="."]
+transform = Transform( -0.777991, 0.628275, 0, -0.628275, -0.777991, 0, 0, 0, 0.5, 1.39961, -3.39497, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../colision")
+material/0 = null
+
+[node name="punta5" type="MeshInstance" parent="."]
+transform = Transform( -0.777991, -0.628275, 0, 0.628275, -0.777991, 0, 0, 0, 0.5, -1.40523, -3.39497, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../colision")
+material/0 = null
+
+[node name="cuadrado" type="MeshInstance" parent="."]
+transform = Transform( 1.52064, 0, 0, 0, 1, 0, 0, 0, 0.5, -0.0151097, -1.36749, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="cuadrado2" type="MeshInstance" parent="."]
+transform = Transform( -5.40089e-08, -0.968264, 0, 1.44144, -4.9376e-08, 0, 0, 0, 0.5, -0.0151097, -1.66513, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="cuadrado3" type="MeshInstance" parent="."]
+transform = Transform( -8.24475e-08, -1.47811, 0, 0.589295, -2.0186e-08, 0, 0, 0, 0.5, -0.0151097, -2.64668, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="colision" type="CollisionShape" parent="."]
+transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 1, 0, -1.12449, 0 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "reset"
+anims/RESET = SubResource( 5 )
+anims/hide = SubResource( 6 )
+anims/reset = SubResource( 7 )
+next/hide = "reset"
+
+[connection signal="body_entered" from="." to="." method="_on_hide_body_entered"]

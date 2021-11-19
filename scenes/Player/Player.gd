@@ -78,3 +78,8 @@ func _integrate_forces(state):
 		# Aplicamos instantaneamente la velocidad de salto
 		state.linear_velocity.y = dir.y * jump_speed
 		remaining_jumps -= 1
+
+
+func _on_salto3_body_entered(body):
+	max_jumps += 1
+	pass # Replace with function body.
