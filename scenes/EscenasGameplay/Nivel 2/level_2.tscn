@@ -1,7 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/EscenasGameplay/Moneda.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/EscenasGameplay/Power_Ups/salto3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/EscenasGameplay/Power_Ups/hide.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/EscenasGameplay/Nivel 2/pared.gd" type="Script" id=6]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 50, 1, 50 )
@@ -27,23 +31,6 @@ height = 1.0
 top_radius = 20.0
 bottom_radius = 20.0
 height = 1.0
-
-[sub_resource type="Animation" id=9]
-resource_name = "Nueva Animación"
-length = 5.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("plataforma_dinamica 1:translation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2.5 ),
-"transitions": PoolRealArray( -1.3, 1 ),
-"update": 0,
-"values": [ Vector3( 23.0352, 0, 88.7458 ), Vector3( 23.035, 50, 88.746 ) ]
-}
 
 [sub_resource type="Animation" id=10]
 length = 0.001
@@ -84,9 +71,122 @@ tracks/2/keys = {
 "values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6068, 0, 0 ) ]
 }
 
-[node name="Level" type="Spatial"]
+[sub_resource type="Animation" id=9]
+resource_name = "elevador"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("plataforma_dinamica 1:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -42.015, 3.72608, -40.3511 ), Vector3( -42.015, 18.0453, -40.3511 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "hide"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "reset"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="level_2" type="Spatial"]
 
 [node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 1.67678, 0, 0, 0, 1, 0, 0, 0, 0.57348, -32.1607, 0, -19.8949 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
@@ -98,17 +198,17 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.0932, 10.1586, 46.9408 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.732, 10.9901, 5.40505 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 32.063, 3.23409 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -67.183, 32.063, 3.23409 )
 shadow_enabled = true
 __meta__ = {
 "_editor_description_": "Esta apuntando directo hacia abajo para que sirva de guia de posición"
 }
 
 [node name="plataforma" type="StaticBody" parent="."]
-transform = Transform( 2.45534, 0, 0, 0, 2.23359, 0, 0, 0, 14.6864, -44.7379, 4.5362, 22.301 )
+transform = Transform( 2.45534, 0, 0, 0, 2.23359, 0, 0, 0, 4.28521, -111.624, 4.5362, 0.327562 )
 
 [node name="CollisionShape" type="CollisionShape" parent="plataforma"]
 shape = SubResource( 4 )
@@ -117,78 +217,8 @@ shape = SubResource( 4 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="plataforma5" type="StaticBody" parent="."]
-transform = Transform( 11.6852, 0, 0, 0, 7.44187, 0, 0, 0, 3.84203, -25.8055, 14.9105, -41.5727 )
-
-[node name="CollisionShape" type="CollisionShape" parent="plataforma5"]
-shape = SubResource( 4 )
-
-[node name="MeshInstance" type="MeshInstance" parent="plataforma5"]
-mesh = SubResource( 5 )
-material/0 = null
-
-[node name="plataforma2" type="StaticBody" parent="."]
-transform = Transform( 10.4876, 0, 0, 0, 1, 0, 0, 0, 5, -29.051, 50, 90 )
-
-[node name="CollisionShape" type="CollisionShape" parent="plataforma2"]
-shape = SubResource( 4 )
-
-[node name="MeshInstance" type="MeshInstance" parent="plataforma2"]
-mesh = SubResource( 5 )
-material/0 = null
-
-[node name="plataforma3" type="StaticBody" parent="."]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, -82.7348, 79.4918, 90 )
-
-[node name="CollisionShape" type="CollisionShape" parent="plataforma3"]
-shape = SubResource( 4 )
-
-[node name="MeshInstance" type="MeshInstance" parent="plataforma3"]
-mesh = SubResource( 5 )
-material/0 = null
-
-[node name="plataforma4" type="StaticBody" parent="."]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, -82.7348, 31.4871, -20.2515 )
-
-[node name="CollisionShape" type="CollisionShape" parent="plataforma4"]
-shape = SubResource( 4 )
-
-[node name="MeshInstance" type="MeshInstance" parent="plataforma4"]
-mesh = SubResource( 5 )
-material/0 = null
-
-[node name="plataforma_final" type="StaticBody" parent="."]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, 123.891, 9.23216, -61.0803 )
-
-[node name="CollisionShape" type="CollisionShape" parent="plataforma_final"]
-shape = SubResource( 4 )
-
-[node name="MeshInstance" type="MeshInstance" parent="plataforma_final"]
-mesh = SubResource( 5 )
-material/0 = null
-
-[node name="plataforma7" type="StaticBody" parent="."]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, 96.6513, 7.35511, -3.7174 )
-
-[node name="CollisionShape" type="CollisionShape" parent="plataforma7"]
-shape = SubResource( 4 )
-
-[node name="MeshInstance" type="MeshInstance" parent="plataforma7"]
-mesh = SubResource( 5 )
-material/0 = null
-
-[node name="pared" type="StaticBody" parent="."]
-transform = Transform( 0.954163, 0, 0, 0, 12.1436, 0, 0, 0, 11.4701, 48.0846, 24.2306, -0.497955 )
-
-[node name="CollisionShape" type="CollisionShape" parent="pared"]
-shape = SubResource( 4 )
-
-[node name="MeshInstance" type="MeshInstance" parent="pared"]
-mesh = SubResource( 5 )
-material/0 = null
-
 [node name="rampa" type="CSGPolygon" parent="."]
-transform = Transform( 4.6095, 0, 0, 0, 3.16834, 0, 0, 0, 1.34229, -39.7207, 0.59947, 2.55501 )
+transform = Transform( 4.60081, 0.194471, 0, -0.282929, 3.16237, 0, 0, 0, 1.34229, -105.941, 0.25067, 1.45392 )
 use_collision = true
 polygon = PoolVector2Array( 0.0110122, 0.0102477, -0.275619, 2.71872, 6.29169, 0.0124421, 0.437124, -0.147683 )
 depth = 7.2
@@ -203,9 +233,197 @@ shape = SubResource( 7 )
 mesh = SubResource( 8 )
 material/0 = null
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="plataforma_dinamica 1"]
+[node name="elevador" type="AnimationPlayer" parent="plataforma_dinamica 1"]
 root_node = NodePath("../..")
-autoplay = "Nueva Animación"
+autoplay = "elevador"
 playback_process_mode = 0
-"anims/Nueva Animación" = SubResource( 9 )
 anims/RESET = SubResource( 10 )
+anims/elevador = SubResource( 9 )
+
+[node name="plataforma5" type="StaticBody" parent="."]
+transform = Transform( 11.685, 0, 0, 0, 7.442, 0, 0, 0, 4, -92.5011, 14.9105, -40.7604 )
+
+[node name="CollisionShape" type="CollisionShape" parent="plataforma5"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="plataforma5"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="plataforma2" type="StaticBody" parent="."]
+transform = Transform( 5, 0, 0, 0, 0.3, 0, 0, 0, 4, -39.9458, 51.4434, -40.8897 )
+
+[node name="CollisionShape" type="CollisionShape" parent="plataforma2"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="plataforma2"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="plataforma3" type="StaticBody" parent="."]
+transform = Transform( 5, 0, 0, 0, 0.3, 0, 0, 0, 4, -90.0921, 68.5674, -40.7656 )
+
+[node name="CollisionShape" type="CollisionShape" parent="plataforma3"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="plataforma3"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="plataforma7" type="StaticBody" parent="."]
+transform = Transform( 5, 0, 0, 0, 0.3, 0, 0, 0, 5, 70.939, 7.355, -20 )
+
+[node name="CollisionShape" type="CollisionShape" parent="plataforma7"]
+
+[node name="MeshInstance" type="MeshInstance" parent="plataforma7"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="final" type="CSGBox" parent="."]
+transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 10, 211.766, 7.355, -20 )
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="final"]
+transform = Transform( 0.5, 0, 0, 0, 3, 0, 0, 0, 0.5, 0, 1.19404, 0 )
+operation = 2
+
+[node name="pared" type="StaticBody" parent="."]
+transform = Transform( 0.954163, 0, 0, 0, 12.1436, 0, 0, 0, 14.6614, 49.7687, 24.2306, -20.52 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="pared"]
+shape = SubResource( 4 )
+disabled = true
+
+[node name="MeshInstance" type="MeshInstance" parent="pared"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="anim" type="AnimationPlayer" parent="pared"]
+autoplay = "reset"
+anims/RESET = SubResource( 11 )
+anims/hide = SubResource( 12 )
+anims/reset = SubResource( 13 )
+next/hide = "reset"
+
+[node name="piso" type="StaticBody" parent="."]
+transform = Transform( -4.06826e-08, -0.046589, 14.4831, -6.47597e-09, 0.29636, 2.2768, -0.954, -2.50103e-11, -6.33078e-07, 109.345, 11.847, -20 )
+
+[node name="CollisionShape" type="CollisionShape" parent="piso"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="piso"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="hide" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6221, 76.2639, -39.7127 )
+
+[node name="salto3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.079, 32.9025, -39.9444 )
+
+[node name="Moneda" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -111.489, 10.6142, -3.96428 )
+
+[node name="Moneda2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -105.417, 10.6141, -3.96428 )
+
+[node name="Moneda3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -98.7073, 8.37978, -3.96428 )
+
+[node name="Moneda4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -92.0807, 6.51329, -3.96428 )
+
+[node name="Moneda5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -85.4768, 4.17141, -3.96429 )
+
+[node name="Moneda6" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -85.4768, 4.17141, -3.96429 )
+
+[node name="Moneda7" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -41.2995, 27.7783, -39.7994 )
+
+[node name="Moneda8" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -41.2995, 33.6012, -39.7994 )
+
+[node name="Moneda9" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -41.2995, 38.4706, -39.7994 )
+
+[node name="Moneda10" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -41.2995, 43.3401, -39.7994 )
+
+[node name="Moneda11" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -106.053, 32.1875, -39.7994 )
+
+[node name="Moneda12" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -100.609, 32.1875, -39.7994 )
+
+[node name="Moneda13" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -94.6033, 32.1875, -39.7994 )
+
+[node name="Moneda14" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -62.3244, 45.8129, -39.7994 )
+
+[node name="Moneda15" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -62.3244, 76.3813, -39.7994 )
+
+[node name="Moneda32" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -89.3676, 85.2914, -39.7994 )
+
+[node name="Moneda33" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -89.3676, 90.4621, -39.7994 )
+
+[node name="Moneda34" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -89.3676, 95.2049, -39.7994 )
+
+[node name="Moneda16" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.6656, 9.50015, -19.8809 )
+
+[node name="Moneda17" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 82.488, 9.8584, -19.8809 )
+
+[node name="Moneda18" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2201, 10.6943, -19.8809 )
+
+[node name="Moneda19" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 93.4745, 11.5303, -19.8809 )
+
+[node name="Moneda20" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 98.2512, 12.4856, -19.8809 )
+
+[node name="Moneda21" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 103.625, 13.2021, -19.8809 )
+
+[node name="Moneda22" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 109.477, 14.1575, -19.8809 )
+
+[node name="Moneda23" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 115.686, 15.2322, -19.8809 )
+
+[node name="Moneda24" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 120.702, 15.9487, -19.8809 )
+
+[node name="Moneda25" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 126.314, 17.0235, -19.8809 )
+
+[node name="Moneda26" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 131.808, 18.2177, -19.8809 )
+
+[node name="Moneda27" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 136.584, 19.5313, -19.8809 )
+
+[node name="Moneda28" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 162.395, 30.605, -19.8809 )
+
+[node name="Moneda29" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 167.762, 30.4126, -19.8809 )
+
+[node name="Moneda30" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 173.558, 29.5468, -19.8809 )
+
+[node name="Moneda31" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 178.429, 27.7879, -19.8809 )
+
+[connection signal="body_entered" from="hide" to="pared" method="_on_hide_body_entered"]
+[connection signal="body_entered" from="salto3" to="Player" method="_on_salto3_body_entered"]
