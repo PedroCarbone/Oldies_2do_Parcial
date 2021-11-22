@@ -1,10 +1,7 @@
 extends Spatial
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+var vidas = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +16,9 @@ func _ready():
 
 func _on_Limite_body_entered(body):
 	get_node("Animación").play("Reseteo")
+	vidas -= 1
+	if vidas <= 0:
+		get_tree().change_scene("res://scenes/game_over/game_over.tscn")
 	pass # Replace with function body.
 
 
