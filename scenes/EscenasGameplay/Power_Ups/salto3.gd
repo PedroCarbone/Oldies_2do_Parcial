@@ -4,7 +4,7 @@ func _ready():
 	show()
 	pass
 	
-func _on_salto3_body_entered(body):
+func _on_salto3_body_entered(_body):
 	hide()
 	get_node("colision").disabled = true
 	pass # Replace with function body.

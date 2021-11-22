@@ -15,6 +15,6 @@ func _ready():
 # Hacemos que camera_assembly trackee la posicion del nodo padre, pero con un lerp para que sea mas suave
 # El valor de CAMERA_FOLLOW_SPEED determina que fraccion de la distancia recorre para alcanzar a la pelota
 # 1.0 significa que llega instantaneamente. 0.5 significa que en cada frame recorre la mitad de la distancia
-func _process(delta):
+func _process(_delta):
 	global_transform.origin = global_transform.origin.linear_interpolate(parent.global_transform.origin, CAMERA_FOLLOW_SPEED)
 

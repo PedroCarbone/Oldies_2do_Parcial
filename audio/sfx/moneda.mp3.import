@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/moneda.mp3-72f2c0d885229875a204660172c894e9.mp3str"
+
+[deps]
+
+source_file="res://audio/sfx/moneda.mp3"
+dest_files=[ "res://.import/moneda.mp3-72f2c0d885229875a204660172c894e9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
