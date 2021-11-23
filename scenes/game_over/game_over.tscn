@@ -49,7 +49,7 @@ tracks/0/keys = {
 "values": [ Vector2( 586, -170 ), Vector2( 598, 122 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("botones/play:modulate")
+tracks/1/path = NodePath("botones/retry:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -61,7 +61,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("botones/quit:modulate")
+tracks/2/path = NodePath("botones/menu:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -124,8 +124,7 @@ anims/fade_in = SubResource( 3 )
 
 [node name="botones" type="CanvasLayer" parent="."]
 
-[node name="play" type="Button" parent="botones"]
-modulate = Color( 1, 1, 1, 0 )
+[node name="retry" type="Button" parent="botones"]
 margin_left = 607.0
 margin_top = 503.0
 margin_right = 1316.0
@@ -136,8 +135,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="quit" type="Button" parent="botones"]
-modulate = Color( 1, 1, 1, 0 )
+[node name="menu" type="Button" parent="botones"]
 margin_left = 733.0
 margin_top = 683.0
 margin_right = 1183.0
@@ -147,3 +145,6 @@ text = "MENU"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="pressed" from="botones/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="botones/menu" to="." method="_on_menu_pressed"]
