@@ -1,14 +1,153 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/victoria/victoria.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Square.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/game_over/logo.jpg" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 54
+size = 192
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 338
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -236, 358 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("titulo:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 159, -182 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("titulo:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "VICTORIA!" ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("titulo:custom_fonts/normal_font:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 192 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("titulo:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 541, -189 ), Vector2( 550, 122 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("botones/play:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -174, 903 ), Vector2( 1698, 903 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("titulo:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "VICTORIA!" ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("titulo:custom_fonts/normal_font:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 192 ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 100
 font_data = ExtResource( 2 )
 
 [node name="victoria" type="Control"]
@@ -19,44 +158,45 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Panel" type="Panel" parent="."]
-anchor_left = 0.501
-anchor_top = 0.503
-anchor_right = 1.002
-anchor_bottom = 1.006
-margin_left = -961.92
-margin_top = -543.24
-margin_right = 0.15979
-margin_bottom = -0.480103
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="menu" type="Button" parent="Panel"]
-anchor_right = 0.529
-anchor_bottom = 0.5
-margin_left = 726.0
-margin_top = 726.0
-margin_right = 158.204
-margin_bottom = 333.0
-custom_fonts/font = SubResource( 1 )
-text = "Menú Principal"
+[node name="fondo" type="Panel" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-anchor_top = -0.0722222
-anchor_right = 0.5
-anchor_bottom = 0.504778
-margin_left = 195.0
-margin_top = 282.0
-margin_right = 766.0
-margin_bottom = 340.84
-custom_fonts/normal_font = SubResource( 2 )
-text = "¡Victoria!"
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -236, 358 )
+scale = Vector2( 1.30813, 1.30813 )
+texture = ExtResource( 3 )
+
+[node name="titulo" type="RichTextLabel" parent="."]
+margin_left = 159.0
+margin_top = -182.0
+margin_right = 1757.0
+margin_bottom = 113.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]BOLITA GIRATORIA[/center]"
+text = "VICTORIA!"
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Panel/menu" to="." method="_on_menu_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fade_in"
+anims/RESET = SubResource( 2 )
+anims/fade_in = SubResource( 3 )
+
+[node name="botones" type="CanvasLayer" parent="."]
+
+[node name="play" type="Button" parent="botones"]
+margin_left = 679.0
+margin_top = 557.0
+margin_right = 1129.0
+margin_bottom = 707.0
+custom_fonts/font = SubResource( 4 )
+text = "MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
