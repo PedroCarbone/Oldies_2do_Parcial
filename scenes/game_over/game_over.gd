@@ -1,7 +1,7 @@
 extends Control
 
-func _on_reiniciar_pressed():
-	get_tree().change_scene("res://scenes/EscenasGameplay/Tutorial.tscn")
+func _on_retry_pressed():
+	get_tree().change_scene("res://scenes/EscenasGameplay/Tutorial/Tutorial.tscn")
 	pass # Replace with function body.
 
 

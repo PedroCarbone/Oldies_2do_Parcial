@@ -86,7 +86,7 @@ tracks/0/keys = {
 "values": [ Vector2( 541, -189 ), Vector2( 550, 122 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("botones/play:modulate")
+tracks/1/path = NodePath("botones/menu:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -190,7 +190,7 @@ anims/fade_in = SubResource( 3 )
 
 [node name="botones" type="CanvasLayer" parent="."]
 
-[node name="play" type="Button" parent="botones"]
+[node name="menu" type="Button" parent="botones"]
 margin_left = 679.0
 margin_top = 557.0
 margin_right = 1129.0
@@ -200,3 +200,5 @@ text = "MENU"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="pressed" from="botones/menu" to="." method="_on_menu_pressed"]
