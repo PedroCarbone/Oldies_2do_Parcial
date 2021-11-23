@@ -93,7 +93,6 @@ tracks/1/keys = {
 }
 
 [node name="hide" type="Area"]
-visible = false
 script = ExtResource( 1 )
 
 [node name="punta" type="MeshInstance" parent="."]
