@@ -224,6 +224,7 @@ script = ExtResource( 5 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 16.6634, 21.7529, -6.2611 )
+shadow_enabled = true
 
 [node name="PlataformaInicial" type="StaticBody" parent="."]
 transform = Transform( 7.34702, 0, 0, 0, 1.30591, 0, 0, 0, 3.53875, -24.0629, 0, 0 )
@@ -315,12 +316,12 @@ transform = Transform( 1.00452, 0, 0, 0, 12.139, 0, 0, 0, 0.613091, -0.00189471,
 depth = 0.769578
 
 [node name="CSGBox3" type="CSGBox" parent="CSGBox/CSGBox3"]
-transform = Transform( 0.957533, 0, 0, 0, 1.19088, 0, 0, 0, 0.385104, 0.689363, -0.306628, 0.225991 )
+transform = Transform( 0.957533, 0, 0, 0, 1.19088, 0, 0, 0, 0.232519, 0.689363, -0.306628, 0.287651 )
 operation = 2
 depth = 0.769578
 
 [node name="CSGBox4" type="CSGBox" parent="CSGBox/CSGBox3"]
-transform = Transform( 0.162951, 0, 0, 0, 0.466621, 0, 0, 0, 0.385104, -0.0792716, -0.306629, 0.525731 )
+transform = Transform( 0.162951, 0, 0, 0, 0.466621, 0, 0, 0, 0.385104, -0.0792716, -0.306629, 0.409357 )
 operation = 2
 depth = 0.787657
 
@@ -491,166 +492,166 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -46.7706 )
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -51.2436 )
 
 [node name="Moneda21" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.3755, 24.3176, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.3755, 23.2808, -61.8027 )
 
 [node name="Moneda22" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.3755, 28.1314, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.3755, 27.0946, -61.8027 )
 
 [node name="Moneda23" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8238, 28.1314, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8238, 27.0946, -61.8027 )
 
 [node name="Moneda24" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8238, 24.2536, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8238, 23.2168, -61.8027 )
 
 [node name="Moneda25" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0238, 24.2536, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0238, 23.2168, -61.8027 )
 
 [node name="Moneda26" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0238, 27.9976, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0238, 26.9608, -61.8027 )
 
 [node name="Moneda27" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.5707, 27.9976, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.5707, 26.9608, -61.8027 )
 
 [node name="Moneda28" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.5707, 24.2296, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.5707, 23.1928, -61.8027 )
 
 [node name="Moneda29" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.228, 24.2296, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.228, 23.1928, -61.8027 )
 
 [node name="Moneda30" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.228, 27.7913, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.228, 26.7545, -61.8027 )
 
 [node name="Moneda31" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6583, 27.7913, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6583, 26.7545, -61.8027 )
 
 [node name="Moneda32" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6583, 24.473, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6583, 23.4362, -61.8027 )
 
 [node name="Moneda33" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 24.473, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 23.4362, -61.8027 )
 
 [node name="Moneda34" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 28.1789, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 27.1421, -61.8027 )
 
 [node name="Moneda35" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 30.8246, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 29.7878, -61.8027 )
 
 [node name="Moneda36" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 33.5396, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 32.5028, -61.8027 )
 
 [node name="Moneda37" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 30.8246, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 29.7878, -61.8027 )
 
 [node name="Moneda38" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 33.5396, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 32.5028, -61.8027 )
 
 [node name="Moneda39" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 30.8246, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 29.7878, -61.8027 )
 
 [node name="Moneda40" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 33.5396, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 32.5028, -61.8027 )
 
 [node name="Moneda41" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 30.8246, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 29.7878, -61.8027 )
 
 [node name="Moneda42" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 33.5396, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 32.5028, -61.8027 )
 
 [node name="Moneda43" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 30.8246, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 29.7878, -61.8027 )
 
 [node name="Moneda44" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 33.5396, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 32.5028, -61.8027 )
 
 [node name="Moneda45" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 30.8246, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 29.7878, -61.8027 )
 
 [node name="Moneda46" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 33.5396, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 32.5028, -61.8027 )
 
 [node name="Moneda47" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 30.8246, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 29.7878, -61.8027 )
 
 [node name="Moneda48" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 33.5396, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 32.5028, -61.8027 )
 
 [node name="Moneda49" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 36.0465, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 35.0097, -61.8027 )
 
 [node name="Moneda50" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 36.0465, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 35.0097, -61.8027 )
 
 [node name="Moneda51" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 36.0465, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 35.0097, -61.8027 )
 
 [node name="Moneda52" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 36.0465, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 35.0097, -61.8027 )
 
 [node name="Moneda53" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 36.0465, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 35.0097, -61.8027 )
 
 [node name="Moneda54" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 36.0465, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 35.0097, -61.8027 )
 
 [node name="Moneda55" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 36.0465, -62.4043 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 35.0097, -61.8027 )
 
 [node name="Moneda56" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 83.6315, 45.5473, -65.6073 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 83.6315, 42.6699, -65.6073 )
 
 [node name="Moneda57" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 80.0368, 45.5473, -65.6073 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 80.0368, 42.6699, -65.6073 )
 
 [node name="Moneda58" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 76.6614, 45.5473, -65.6073 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 76.6614, 42.6699, -65.6073 )
 
 [node name="Moneda59" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 73.0383, 45.5473, -65.6073 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 73.0383, 42.6699, -65.6073 )
 
 [node name="Moneda60" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.4871, 45.5473, -65.6073 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.4871, 42.6699, -65.6073 )
 
 [node name="Moneda61" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 66.3036, 45.5473, -65.6073 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 66.3036, 42.6699, -65.6073 )
 
 [node name="Moneda62" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 62.6911, 45.5473, -65.6073 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 62.6911, 42.6699, -65.6073 )
 
 [node name="Moneda63" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3529, 58.935, -86.4577 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3529, 58.0531, -86.4577 )
 
 [node name="Moneda64" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 48.1694, 58.935, -86.4577 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 48.1694, 58.0531, -86.4577 )
 
 [node name="Moneda65" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 44.5569, 58.935, -86.4577 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 44.5569, 58.0531, -86.4577 )
 
 [node name="Moneda66" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3529, 58.935, -90.3868 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3529, 58.0531, -90.3868 )
 
 [node name="Moneda67" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 48.1694, 58.935, -90.3868 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 48.1694, 58.0531, -90.3868 )
 
 [node name="Moneda68" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 44.5569, 58.935, -90.3868 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 44.5569, 58.0531, -90.3868 )
 
 [node name="Moneda69" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3529, 58.935, -94.2336 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3529, 58.0531, -94.2336 )
 
 [node name="Moneda70" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 48.1694, 58.935, -94.2336 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 48.1694, 58.0531, -94.2336 )
 
 [node name="Moneda71" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 44.5569, 58.935, -94.2336 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 44.5569, 58.0531, -94.2336 )
 
 [node name="Moneda72" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3529, 58.935, -98.06 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3529, 58.0531, -98.06 )
 
 [node name="Moneda73" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 48.1694, 58.935, -98.06 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 48.1694, 58.0531, -98.06 )
 
 [node name="Moneda74" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 44.5569, 58.935, -98.06 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 44.5569, 58.0531, -98.06 )
 
 [node name="Moneda75" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 117.125, 41.7726, -66.8487 )
