@@ -14,7 +14,7 @@ func _ready():
 
 
 
-func _on_Limite_body_entered(body):
+func _on_Limite_body_entered(_body):
 	get_node("Animación").play("Reseteo")
 	vidas -= 1
 	if vidas <= 0:
@@ -22,10 +22,10 @@ func _on_Limite_body_entered(body):
 	pass # Replace with function body.
 
 
-func _on_Final_body_entered(body):
+func _on_Final_body_entered(_body):
 	get_node("Animación").play("Final")
 	pass # Replace with function body.
 
 func _final_nivel():
-	get_tree().change_scene("res://level_2.tscn")
+	get_tree().change_scene("res://scenes/EscenasGameplay/Nivel 2/level_2.tscn")
 	pass

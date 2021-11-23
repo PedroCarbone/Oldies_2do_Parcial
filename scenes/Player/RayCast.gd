@@ -9,5 +9,5 @@ func _ready():
 
 # Como si nos interesa que tenga la misma posicion, hacemos que trackee la posicion
 # del padre
-func _physics_process(delta):
+func _physics_process(_delta):
 	global_transform.origin = parent.global_transform.origin
