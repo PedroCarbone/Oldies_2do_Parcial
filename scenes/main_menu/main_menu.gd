@@ -9,7 +9,7 @@ func _on_quit_pressed():
 	pass
 	
 func _on_settings_pressed():
-	get_tree().change_scene("")
+	get_tree().change_scene("res://scenes/settings/settings.tscn")
 	pass
 
 func _on_creditos_pressed():
