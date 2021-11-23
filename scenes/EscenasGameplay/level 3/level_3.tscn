@@ -316,8 +316,10 @@ transform = Transform( 1.00452, 0, 0, 0, 12.139, 0, 0, 0, 0.613091, -0.00189471,
 depth = 0.769578
 
 [node name="CSGBox3" type="CSGBox" parent="CSGBox/CSGBox3"]
-transform = Transform( 0.957533, 0, 0, 0, 1.19088, 0, 0, 0, 0.232519, 0.689363, -0.306628, 0.287651 )
+transform = Transform( 0.957533, 0, 0, 0, 1.19088, 0, 0, 0, 0.232519, 0.442633, 0.0566447, 0.287651 )
 operation = 2
+width = 1.43105
+height = 1.14906
 depth = 0.769578
 
 [node name="CSGBox4" type="CSGBox" parent="CSGBox/CSGBox3"]
