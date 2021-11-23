@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/victoria/victoria.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Square.ttf" type="DynamicFontData" id=2]
@@ -86,7 +86,7 @@ tracks/0/keys = {
 "values": [ Vector2( 541, -189 ), Vector2( 550, 122 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("botones/menu:modulate")
+tracks/1/path = NodePath("botones/creditos:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -150,9 +150,18 @@ tracks/5/keys = {
 size = 100
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 100
+font_data = ExtResource( 2 )
+
 [node name="victoria" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 571, 1018 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -190,15 +199,37 @@ anims/fade_in = SubResource( 3 )
 
 [node name="botones" type="CanvasLayer" parent="."]
 
-[node name="menu" type="Button" parent="botones"]
-margin_left = 679.0
-margin_top = 557.0
-margin_right = 1129.0
-margin_bottom = 707.0
+[node name="creditos" type="Button" parent="botones"]
+margin_left = 256.0
+margin_top = 824.0
+margin_right = 706.0
+margin_bottom = 974.0
 custom_fonts/font = SubResource( 4 )
-text = "MENU"
+text = "creditos"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="botones/menu" to="." method="_on_menu_pressed"]
+[node name="nombre" type="LineEdit" parent="botones"]
+margin_left = 470.0
+margin_top = 426.0
+margin_right = 1420.0
+margin_bottom = 541.0
+custom_fonts/font = SubResource( 5 )
+text = "ingresa tu nombre"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="puntos" type="Label" parent="botones"]
+margin_left = 550.0
+margin_top = 581.0
+margin_right = 946.0
+margin_bottom = 686.0
+custom_fonts/font = SubResource( 6 )
+text = "puntos: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="botones/creditos" to="." method="_on_creditos_pressed"]

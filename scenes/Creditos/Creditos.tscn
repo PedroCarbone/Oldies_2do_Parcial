@@ -155,7 +155,7 @@ size = 100
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 60
+size = 100
 font_data = ExtResource( 2 )
 
 [node name="Control" type="Control"]
@@ -298,7 +298,7 @@ margin_right = 665.159
 margin_bottom = -206.619
 custom_fonts/font = SubResource( 5 )
 disabled = true
-text = "menú principal"
+text = "menú"
 __meta__ = {
 "_edit_use_anchors_": false
 }
