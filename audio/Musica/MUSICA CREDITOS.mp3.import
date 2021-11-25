@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MUSICA CREDITOS.mp3-281a9ee66cf61773506d30d6cf657218.mp3str"
+
+[deps]
+
+source_file="res://audio/Musica/MUSICA CREDITOS.mp3"
+dest_files=[ "res://.import/MUSICA CREDITOS.mp3-281a9ee66cf61773506d30d6cf657218.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
