@@ -645,9 +645,11 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 10.8226, 7.62939e-06 )
 
 [node name="Moneda5" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 38.005, 27.4299, 7.62939e-06 )
+visible = false
 
 [node name="Moneda6" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 32.9253, 29.239, 7.62939e-06 )
+visible = false
 
 [node name="Moneda7" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.0386, 23.4527, 7.62939e-06 )
