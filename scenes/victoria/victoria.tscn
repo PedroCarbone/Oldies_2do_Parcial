@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/victoria/victoria.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Square.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/game_over/logo.jpg" type="Texture" id=3]
+[ext_resource path="res://scenes/EscenasGameplay/Tutorial/score.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 192
@@ -158,6 +159,10 @@ font_data = ExtResource( 2 )
 size = 100
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 100
+font_data = ExtResource( 2 )
+
 [node name="victoria" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -187,7 +192,7 @@ margin_bottom = 113.0
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center]BOLITA GIRATORIA[/center]"
-text = "VICTORIA!"
+text = "BOLITA GIRATORIA"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -228,6 +233,17 @@ margin_right = 946.0
 margin_bottom = 686.0
 custom_fonts/font = SubResource( 6 )
 text = "puntos: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="botones"]
+margin_left = 937.827
+margin_top = 579.703
+margin_right = 1250.83
+margin_bottom = 684.703
+custom_fonts/font = SubResource( 7 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

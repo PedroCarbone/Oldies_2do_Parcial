@@ -23,4 +23,5 @@ func _on_Area_body_entered(_body):
 
 func _on_Final_body_entered(_body):
 	get_tree().change_scene("res://scenes/EscenasGameplay/level 3/level_3.tscn")
+	print(Global.score)
 	pass # Replace with function body.

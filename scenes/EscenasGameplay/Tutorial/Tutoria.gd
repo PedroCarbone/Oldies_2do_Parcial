@@ -23,5 +23,6 @@ func _on_Limite_body_entered(_body):
 
 func _on_Final_body_entered(_body):
 	get_tree().change_scene("res://scenes/EscenasGameplay/Nivel 2/level_2.tscn")
+	print(Global.score)
 	pass # Replace with function body.
 
