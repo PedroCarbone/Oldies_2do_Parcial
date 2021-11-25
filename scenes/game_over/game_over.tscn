@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://fonts/Square.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/game_over/game_over.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game_over/logo.jpg" type="Texture" id=3]
+[ext_resource path="res://scenes/EscenasGameplay/Tutorial/score.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 150
@@ -86,6 +87,10 @@ tracks/3/keys = {
 "values": [ "GAME OVER" ]
 }
 
+[sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = ExtResource( 1 )
+
 [sub_resource type="DynamicFont" id=5]
 size = 100
 font_data = ExtResource( 1 )
@@ -94,7 +99,7 @@ font_data = ExtResource( 1 )
 size = 100
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=7]
 size = 100
 font_data = ExtResource( 1 )
 
@@ -121,7 +126,7 @@ margin_bottom = 18.0
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center]BOLITA GIRATORIA[/center]"
-text = "GAME OVER"
+text = "BOLITA GIRATORIA"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -139,7 +144,7 @@ margin_top = 407.0
 margin_right = 1420.0
 margin_bottom = 522.0
 rect_pivot_offset = Vector2( -1369, 58 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "ingresa tu nombre"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -150,7 +155,7 @@ margin_left = 550.0
 margin_top = 556.0
 margin_right = 946.0
 margin_bottom = 661.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "puntos: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -161,7 +166,7 @@ margin_left = 194.0
 margin_top = 819.0
 margin_right = 903.0
 margin_bottom = 969.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "REINICIAR NIVEL"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -172,8 +177,19 @@ margin_left = 996.0
 margin_top = 819.0
 margin_right = 1446.0
 margin_bottom = 969.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="botones"]
+margin_left = 937.827
+margin_top = 546.029
+margin_right = 1250.83
+margin_bottom = 651.029
+custom_fonts/font = SubResource( 7 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

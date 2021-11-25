@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://scenes/EscenasGameplay/Nivel 2/level_2.gd" type="Script" id=7]
 [ext_resource path="res://arte/UI/corazonbien.png" type="Texture" id=8]
 [ext_resource path="res://arte/UI/corazonroto.png" type="Texture" id=9]
+[ext_resource path="res://fonts/Square.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://scenes/EscenasGameplay/Tutorial/score.gd" type="Script" id=11]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 50, 1, 50 )
@@ -192,8 +194,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=18]
-resource_name = "dosvidas"
+[sub_resource type="DynamicFont" id=18]
+size = 39
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=19]
 length = 0.01
 loop = true
 tracks/0/type = "value"
@@ -245,8 +250,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=19]
-resource_name = "dosvidastransicion"
+[sub_resource type="Animation" id=20]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/HP/hp3:frame")
@@ -273,8 +277,7 @@ tracks/1/keys = {
 "values": [ true, false, true, false, true, false ]
 }
 
-[sub_resource type="Animation" id=20]
-resource_name = "tresvidas"
+[sub_resource type="Animation" id=21]
 length = 0.01
 loop = true
 tracks/0/type = "value"
@@ -314,8 +317,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=21]
-resource_name = "unavida"
+[sub_resource type="Animation" id=22]
 length = 0.01
 loop = true
 tracks/0/type = "value"
@@ -379,8 +381,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=22]
-resource_name = "unavidatransicion"
+[sub_resource type="Animation" id=23]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/HP/hp2:frame")
@@ -563,9 +564,6 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -92.0807, 6.51329, -3.96428 )
 [node name="Moneda5" parent="." instance=ExtResource( 3 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -85.4768, 4.17141, -3.96429 )
 
-[node name="Moneda6" parent="." instance=ExtResource( 3 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -85.4768, 4.17141, -3.96429 )
-
 [node name="Moneda7" parent="." instance=ExtResource( 3 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -41.2995, 27.7783, -39.7994 )
 
@@ -696,13 +694,25 @@ position = Vector2( 448.358, 101.448 )
 frames = SubResource( 17 )
 frame = 1
 
+[node name="score" type="Label" parent="UI/Control"]
+margin_left = 284.231
+margin_top = 55.6036
+margin_right = 408.231
+margin_bottom = 96.6036
+custom_fonts/font = SubResource( 18 )
+text = "Score:"
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="corazones" type="AnimationPlayer" parent="UI"]
 autoplay = "tresvidas"
-anims/dosvidas = SubResource( 18 )
-anims/dosvidastransicion = SubResource( 19 )
-anims/tresvidas = SubResource( 20 )
-anims/unavida = SubResource( 21 )
-anims/unavidatransicion = SubResource( 22 )
+anims/dosvidas = SubResource( 19 )
+anims/dosvidastransicion = SubResource( 20 )
+anims/tresvidas = SubResource( 21 )
+anims/unavida = SubResource( 22 )
+anims/unavidatransicion = SubResource( 23 )
 next/dosvidastransicion = "dosvidas"
 next/unavidatransicion = "unavida"
 

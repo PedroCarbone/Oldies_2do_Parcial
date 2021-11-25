@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/EscenasGameplay/Power_Ups/hide.tscn" type="PackedScene" id=2]
@@ -8,12 +8,14 @@
 [ext_resource path="res://scenes/EscenasGameplay/Moneda.tscn" type="PackedScene" id=6]
 [ext_resource path="res://arte/UI/corazonbien.png" type="Texture" id=7]
 [ext_resource path="res://arte/UI/corazonroto.png" type="Texture" id=8]
+[ext_resource path="res://fonts/Square.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://scenes/EscenasGameplay/Tutorial/score.gd" type="Script" id=10]
 
 [sub_resource type="BoxShape" id=1]
 
 [sub_resource type="CubeMesh" id=2]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "respawn"
 length = 0.5
 tracks/0/type = "value"
@@ -29,11 +31,11 @@ tracks/0/keys = {
 "values": [ Vector3( -23.9342, 9.11783, 0.256427 ), Vector3( -23.9342, 2.36086, 0.256427 ) ]
 }
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=4]
 
-[sub_resource type="CubeMesh" id=6]
+[sub_resource type="CubeMesh" id=5]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 length = 5.0
 loop = true
 tracks/0/type = "value"
@@ -49,7 +51,7 @@ tracks/0/keys = {
 "values": [ Vector3( -0.113949, 6.43593, 24.0945 ), Vector3( -0.113949, 6.43593, -10.8092 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 resource_name = "movimiento_ascendente"
 length = 3.0
 loop = true
@@ -66,7 +68,7 @@ tracks/0/keys = {
 "values": [ Vector3( 22.7612, 6.43593, 0.0603676 ), Vector3( 22.761, 21.145, 0.06 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("collider_reja:disabled")
@@ -117,7 +119,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=9]
 resource_name = "desaparición"
 length = 5.0
 tracks/0/type = "value"
@@ -169,7 +171,7 @@ tracks/3/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=10]
 resource_name = "Movimiento"
 length = 20.0
 loop = true
@@ -186,7 +188,7 @@ tracks/0/keys = {
 "values": [ Vector3( 101.863, 25.9045, -65.6358 ), Vector3( 202.461, 64.2612, -65.6358 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=11]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
@@ -201,17 +203,21 @@ tracks/0/keys = {
 "values": [ Vector3( 101.863, 25.9045, -65.6358 ) ]
 }
 
-[sub_resource type="BoxShape" id=13]
+[sub_resource type="BoxShape" id=12]
 
-[sub_resource type="CylinderShape" id=14]
+[sub_resource type="CylinderShape" id=13]
 
-[sub_resource type="SpriteFrames" id=15]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=15]
+size = 39
+font_data = ExtResource( 9 )
 
 [sub_resource type="Animation" id=16]
 resource_name = "dosvidas"
@@ -450,7 +456,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9342, 9.11783, 0.256427 )
 
 [node name="animacion" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("../../Limite")
-anims/respawn = SubResource( 4 )
+anims/respawn = SubResource( 3 )
 
 [node name="PlataformaPU" type="StaticBody" parent="."]
 transform = Transform( 4.218, 0, 0, 0, 1.306, 0, 0, 0, 3.539, 0.00893593, 6.13827, -33.644 )
@@ -470,29 +476,29 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165506, 9.40354, -33.8644 )
 transform = Transform( 4.21763, 0, 0, 0, 1, 0, 0, 0, 8.79808, -0.113949, 6.43593, 24.0945 )
 
 [node name="CollisionShape" type="CollisionShape" parent="plataformaMovil1"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="plataformaMovil1"]
-mesh = SubResource( 6 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="animacion" type="AnimationPlayer" parent="plataformaMovil1"]
 autoplay = "movimiento_lateral"
-anims/movimiento_lateral = SubResource( 7 )
+anims/movimiento_lateral = SubResource( 6 )
 
 [node name="plataformaMovil2" type="KinematicBody" parent="."]
 transform = Transform( 4.218, 0, 0, 0, 1, 0, 0, 0, 4.514, 22.7612, 6.43593, 0.0603676 )
 
 [node name="CollisionShape" type="CollisionShape" parent="plataformaMovil2"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="plataformaMovil2"]
-mesh = SubResource( 6 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="animacion" type="AnimationPlayer" parent="plataformaMovil2"]
 autoplay = "movimiento_ascendente"
-anims/movimiento_ascendente = SubResource( 8 )
+anims/movimiento_ascendente = SubResource( 7 )
 
 [node name="PlataformaCentral" type="StaticBody" parent="."]
 transform = Transform( 20.2066, 0, 0, 0, 1.30591, 0, 0, 0, 8.57544, 69.2465, 21.0973, 0 )
@@ -559,23 +565,23 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="AnimacionReja" type="AnimationPlayer" parent="Reja"]
-anims/RESET = SubResource( 9 )
-"anims/desaparición" = SubResource( 10 )
+anims/RESET = SubResource( 8 )
+"anims/desaparición" = SubResource( 9 )
 
 [node name="plataformaMovil3" type="KinematicBody" parent="."]
 transform = Transform( 4.63139, 0, 0, 0, 1.90834, 0, 0, 0, 9.7367, 101.863, 25.9045, -65.6358 )
 
 [node name="CollisionShape" type="CollisionShape" parent="plataformaMovil3"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="plataformaMovil3"]
-mesh = SubResource( 6 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="animacion" type="AnimationPlayer" parent="plataformaMovil3"]
 autoplay = "Movimiento"
-anims/Movimiento = SubResource( 11 )
-anims/RESET = SubResource( 12 )
+anims/Movimiento = SubResource( 10 )
+anims/RESET = SubResource( 11 )
 
 [node name="obstaculo1" type="StaticBody" parent="."]
 transform = Transform( 1.71573, 0, 0, 0, 1.81249, 0, 0, 0, 14.8783, 116.84, 35.3996, -67.2527 )
@@ -622,7 +628,7 @@ transform = Transform( 772.606, 0, 0, 0, 1, 0, 0, 0, 791.321, 131.307, -27.5965,
 
 [node name="CollisionShape" type="CollisionShape" parent="Limite"]
 transform = Transform( 1.65758, 0, 0, 0, 1, 0, 0, 0, 2.41263, 0, 0, 0 )
-shape = SubResource( 13 )
+shape = SubResource( 12 )
 
 [node name="Plataforma_final" type="CSGBox" parent="."]
 transform = Transform( 5.39452, 0, 0, 0, 3.44142, 0, 0, 0, 12.8828, 222.98, 73.9371, -67.0093 )
@@ -638,16 +644,18 @@ transform = Transform( 0.136314, 0, 0, 0, 0.290578, 0, 0, 0, 0.0488222, 0.003524
 
 [node name="ColisionFinal" type="CollisionShape" parent="Plataforma_final/Final"]
 transform = Transform( 1.69797, 0, 0, 0, 1, 0, 0, 0, 2.41263, 0, 0, 0 )
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 
 [node name="Moneda" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 10.8226, 7.62939e-06 )
 
 [node name="Moneda5" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 38.005, 27.4299, 7.62939e-06 )
+visible = false
 
 [node name="Moneda6" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 32.9253, 29.239, 7.62939e-06 )
+visible = false
 
 [node name="Moneda7" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.0386, 23.4527, 7.62939e-06 )
@@ -928,16 +936,28 @@ scale = Vector2( 0.425304, 0.425304 )
 
 [node name="hp1" type="AnimatedSprite" parent="UI/Control/HP"]
 position = Vector2( 125.475, 101.448 )
-frames = SubResource( 15 )
+frames = SubResource( 14 )
 
 [node name="hp2" type="AnimatedSprite" parent="UI/Control/HP"]
 position = Vector2( 292.087, 101.448 )
-frames = SubResource( 15 )
+frames = SubResource( 14 )
 
 [node name="hp3" type="AnimatedSprite" parent="UI/Control/HP"]
 position = Vector2( 448.358, 101.448 )
-frames = SubResource( 15 )
+frames = SubResource( 14 )
 frame = 1
+
+[node name="score" type="Label" parent="UI/Control"]
+margin_left = 284.231
+margin_top = 55.6036
+margin_right = 408.231
+margin_bottom = 96.6036
+custom_fonts/font = SubResource( 15 )
+text = "Score:"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="corazones" type="AnimationPlayer" parent="UI"]
 autoplay = "tresvidas"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/EscenasGameplay/Moneda.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://audio/sfx/moneda.mp3" type="AudioStream" id=5]
 [ext_resource path="res://arte/UI/corazonbien.png" type="Texture" id=6]
 [ext_resource path="res://arte/UI/corazonroto.png" type="Texture" id=7]
+[ext_resource path="res://fonts/Square.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://scenes/EscenasGameplay/Tutorial/score.gd" type="Script" id=9]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -150,8 +152,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=14]
-resource_name = "dosvidas"
+[sub_resource type="DynamicFont" id=14]
+size = 39
+font_data = ExtResource( 8 )
+
+[sub_resource type="Animation" id=15]
 length = 0.01
 loop = true
 tracks/0/type = "value"
@@ -203,8 +208,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=15]
-resource_name = "dosvidastransicion"
+[sub_resource type="Animation" id=16]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/HP/hp3:frame")
@@ -231,8 +235,7 @@ tracks/1/keys = {
 "values": [ true, false, true, false, true, false ]
 }
 
-[sub_resource type="Animation" id=16]
-resource_name = "tresvidas"
+[sub_resource type="Animation" id=17]
 length = 0.01
 loop = true
 tracks/0/type = "value"
@@ -272,8 +275,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=17]
-resource_name = "unavida"
+[sub_resource type="Animation" id=18]
 length = 0.01
 loop = true
 tracks/0/type = "value"
@@ -337,8 +339,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=18]
-resource_name = "unavidatransicion"
+[sub_resource type="Animation" id=19]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/HP/hp2:frame")
@@ -508,7 +509,7 @@ __meta__ = {
 }
 
 [node name="HP" type="Sprite" parent="UI/Control"]
-position = Vector2( 21.6691, 28.5683 )
+position = Vector2( 21.669, 28.568 )
 scale = Vector2( 0.425304, 0.425304 )
 
 [node name="hp1" type="AnimatedSprite" parent="UI/Control/HP"]
@@ -525,13 +526,25 @@ position = Vector2( 448.358, 101.448 )
 frames = SubResource( 13 )
 frame = 1
 
+[node name="score" type="Label" parent="UI/Control"]
+margin_left = 284.231
+margin_top = 55.6036
+margin_right = 408.231
+margin_bottom = 96.6036
+custom_fonts/font = SubResource( 14 )
+text = "Score:"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="corazones" type="AnimationPlayer" parent="UI"]
 autoplay = "tresvidas"
-anims/dosvidas = SubResource( 14 )
-anims/dosvidastransicion = SubResource( 15 )
-anims/tresvidas = SubResource( 16 )
-anims/unavida = SubResource( 17 )
-anims/unavidatransicion = SubResource( 18 )
+anims/dosvidas = SubResource( 15 )
+anims/dosvidastransicion = SubResource( 16 )
+anims/tresvidas = SubResource( 17 )
+anims/unavida = SubResource( 18 )
+anims/unavidatransicion = SubResource( 19 )
 next/dosvidastransicion = "dosvidas"
 next/unavidatransicion = "unavida"
 

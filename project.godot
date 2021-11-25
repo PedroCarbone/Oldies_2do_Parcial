@@ -14,6 +14,10 @@ config/name="Bolita Giratoria"
 run/main_scene="res://scenes/intro/intro.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [display]
 
 window/size/width=1920
