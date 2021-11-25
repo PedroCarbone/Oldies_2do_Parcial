@@ -82,4 +82,5 @@ func _integrate_forces(state):
 
 func _on_salto3_body_entered(_body):
 	max_jumps += 1
+	remaining_jumps += 1
 	pass # Replace with function body.
