@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/EscenasGameplay/Power_Ups/hide.tscn" type="PackedScene" id=2]
@@ -6,12 +6,14 @@
 [ext_resource path="res://scenes/EscenasGameplay/level 3/Reja.gd" type="Script" id=4]
 [ext_resource path="res://scenes/EscenasGameplay/level 3/level_3.gd" type="Script" id=5]
 [ext_resource path="res://scenes/EscenasGameplay/Moneda.tscn" type="PackedScene" id=6]
+[ext_resource path="res://arte/UI/corazonbien.png" type="Texture" id=7]
+[ext_resource path="res://arte/UI/corazonroto.png" type="Texture" id=8]
 
 [sub_resource type="BoxShape" id=1]
 
 [sub_resource type="CubeMesh" id=2]
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Player:translation")
@@ -26,7 +28,7 @@ tracks/0/keys = {
 "values": [ Vector3( -0.892471, 2.13021, 0.256427 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=4]
 resource_name = "respawn"
 length = 0.5
 tracks/0/type = "value"
@@ -42,12 +44,11 @@ tracks/0/keys = {
 "values": [ Vector3( -23.9342, 9.11783, 0.256427 ), Vector3( -23.9342, 2.36086, 0.256427 ) ]
 }
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=5]
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=6]
 
-[sub_resource type="Animation" id=6]
-resource_name = "movimiento_lateral"
+[sub_resource type="Animation" id=7]
 length = 5.0
 loop = true
 tracks/0/type = "value"
@@ -217,7 +218,230 @@ tracks/0/keys = {
 
 [sub_resource type="BoxShape" id=13]
 
-[sub_resource type="CylinderShape" id=16]
+[sub_resource type="CylinderShape" id=14]
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=16]
+resource_name = "dosvidas"
+length = 0.01
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/HP/hp1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/HP/hp2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/HP/hp3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/HP/hp3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "dosvidastransicion"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/HP/hp3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/HP/hp3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "tresvidas"
+length = 0.01
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/HP/hp1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/HP/hp2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/HP/hp3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "unavida"
+length = 0.01
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/HP/hp1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/HP/hp2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/HP/hp3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/HP/hp3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Control/HP/hp2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "unavidatransicion"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/HP/hp2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/HP/hp2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 5 )
@@ -237,13 +461,12 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.892471, 2.13021, 0.256427 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9342, 9.11783, 0.256427 )
 
 [node name="animacion" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("../../Limite")
-autoplay = "respawn"
-anims/RESET = SubResource( 14 )
-anims/respawn = SubResource( 15 )
+anims/RESET = SubResource( 3 )
+anims/respawn = SubResource( 4 )
 
 [node name="PlataformaPU" type="StaticBody" parent="."]
 transform = Transform( 4.218, 0, 0, 0, 1.306, 0, 0, 0, 3.539, 0.00893593, 6.13827, -33.644 )
@@ -263,24 +486,24 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165506, 9.40354, -33.8644 )
 transform = Transform( 4.21763, 0, 0, 0, 1, 0, 0, 0, 8.79808, -0.113949, 6.43593, 24.0945 )
 
 [node name="CollisionShape" type="CollisionShape" parent="plataformaMovil1"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="plataformaMovil1"]
-mesh = SubResource( 4 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="animacion" type="AnimationPlayer" parent="plataformaMovil1"]
 autoplay = "movimiento_lateral"
-anims/movimiento_lateral = SubResource( 6 )
+anims/movimiento_lateral = SubResource( 7 )
 
 [node name="plataformaMovil2" type="KinematicBody" parent="."]
 transform = Transform( 4.218, 0, 0, 0, 1, 0, 0, 0, 4.514, 22.7612, 6.43593, 0.0603676 )
 
 [node name="CollisionShape" type="CollisionShape" parent="plataformaMovil2"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="plataformaMovil2"]
-mesh = SubResource( 4 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="animacion" type="AnimationPlayer" parent="plataformaMovil2"]
@@ -316,7 +539,7 @@ transform = Transform( 1.00452, 0, 0, 0, 12.139, 0, 0, 0, 0.613091, -0.00189471,
 depth = 0.769578
 
 [node name="CSGBox3" type="CSGBox" parent="CSGBox/CSGBox3"]
-transform = Transform( 0.957533, 0, 0, 0, 1.19088, 0, 0, 0, 0.232519, 0.442633, 0.0566447, 0.287651 )
+transform = Transform( 0.957533, 0, 0, 0, 1.19088, 0, 0, 0, 0.52557, 0.442633, 0.0566447, 0.107891 )
 operation = 2
 width = 1.43105
 height = 1.14906
@@ -359,10 +582,10 @@ anims/RESET = SubResource( 9 )
 transform = Transform( 4.63139, 0, 0, 0, 1.90834, 0, 0, 0, 9.7367, 101.863, 25.9045, -65.6358 )
 
 [node name="CollisionShape" type="CollisionShape" parent="plataformaMovil3"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="plataformaMovil3"]
-mesh = SubResource( 4 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="animacion" type="AnimationPlayer" parent="plataformaMovil3"]
@@ -431,7 +654,7 @@ transform = Transform( 0.136314, 0, 0, 0, 0.290578, 0, 0, 0, 0.0488222, 0.003524
 
 [node name="ColisionFinal" type="CollisionShape" parent="Plataforma_final/Final"]
 transform = Transform( 1.69797, 0, 0, 0, 1, 0, 0, 0, 2.41263, 0, 0, 0 )
-shape = SubResource( 16 )
+shape = SubResource( 14 )
 
 [node name="Moneda" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 10.8226, 7.62939e-06 )
@@ -493,113 +716,92 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -46.7706 )
 [node name="Moneda20" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -51.2436 )
 
-[node name="Moneda21" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.3755, 23.2808, -61.8027 )
-
 [node name="Moneda22" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.3755, 27.0946, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.3755, 27.0946, -65.2575 )
 
 [node name="Moneda23" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8238, 27.0946, -61.8027 )
-
-[node name="Moneda24" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8238, 23.2168, -61.8027 )
-
-[node name="Moneda25" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0238, 23.2168, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8238, 27.0946, -65.2575 )
 
 [node name="Moneda26" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0238, 26.9608, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0238, 26.9608, -65.2575 )
 
 [node name="Moneda27" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.5707, 26.9608, -61.8027 )
-
-[node name="Moneda28" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.5707, 23.1928, -61.8027 )
-
-[node name="Moneda29" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.228, 23.1928, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.5707, 26.9608, -65.2575 )
 
 [node name="Moneda30" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.228, 26.7545, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.228, 26.7545, -65.2575 )
 
 [node name="Moneda31" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6583, 26.7545, -61.8027 )
-
-[node name="Moneda32" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6583, 23.4362, -61.8027 )
-
-[node name="Moneda33" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 23.4362, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6583, 26.7545, -65.2575 )
 
 [node name="Moneda34" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 27.1421, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 27.1421, -65.2575 )
 
 [node name="Moneda35" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 29.7878, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 29.7878, -65.2575 )
 
 [node name="Moneda36" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 32.5028, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 32.5028, -65.2575 )
 
 [node name="Moneda37" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 29.7878, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 29.7878, -65.2575 )
 
 [node name="Moneda38" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 32.5028, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 32.5028, -65.2575 )
 
 [node name="Moneda39" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 29.7878, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 29.7878, -65.2575 )
 
 [node name="Moneda40" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 32.5028, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 32.5028, -65.2575 )
 
 [node name="Moneda41" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 29.7878, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 29.7878, -65.2575 )
 
 [node name="Moneda42" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 32.5028, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 32.5028, -65.2575 )
 
 [node name="Moneda43" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 29.7878, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 29.7878, -65.2575 )
 
 [node name="Moneda44" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 32.5028, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 32.5028, -65.2575 )
 
 [node name="Moneda45" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 29.7878, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 29.7878, -65.2575 )
 
 [node name="Moneda46" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 32.5028, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 32.5028, -65.2575 )
 
 [node name="Moneda47" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 29.7878, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 29.7878, -65.2575 )
 
 [node name="Moneda48" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 32.5028, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 32.5028, -65.2575 )
 
 [node name="Moneda49" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 35.0097, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 35.0097, -65.2575 )
 
 [node name="Moneda50" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 35.0097, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 35.0097, -65.2575 )
 
 [node name="Moneda51" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 35.0097, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 35.0097, -65.2575 )
 
 [node name="Moneda52" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 35.0097, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 35.0097, -65.2575 )
 
 [node name="Moneda53" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 35.0097, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 35.0097, -65.2575 )
 
 [node name="Moneda54" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 35.0097, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 35.0097, -65.2575 )
 
 [node name="Moneda55" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 35.0097, -61.8027 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 35.0097, -65.2575 )
 
 [node name="Moneda56" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 83.6315, 42.6699, -65.6073 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 83.6315, 42.6699, -65.6787 )
 
 [node name="Moneda57" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 80.0368, 42.6699, -65.6073 )
@@ -672,6 +874,43 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 223.071, 86.4965, -66.924 )
 
 [node name="Moneda80" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 223.071, 90.2314, -66.924 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="Sprite" parent="UI/Control"]
+position = Vector2( 21.6691, 28.5683 )
+scale = Vector2( 0.425304, 0.425304 )
+
+[node name="hp1" type="AnimatedSprite" parent="UI/Control/HP"]
+position = Vector2( 125.475, 101.448 )
+frames = SubResource( 15 )
+
+[node name="hp2" type="AnimatedSprite" parent="UI/Control/HP"]
+position = Vector2( 292.087, 101.448 )
+frames = SubResource( 15 )
+frame = 1
+
+[node name="hp3" type="AnimatedSprite" parent="UI/Control/HP"]
+position = Vector2( 448.358, 101.448 )
+frames = SubResource( 15 )
+frame = 1
+
+[node name="corazones" type="AnimationPlayer" parent="UI"]
+autoplay = "tresvidas"
+anims/dosvidas = SubResource( 16 )
+anims/dosvidastransicion = SubResource( 17 )
+anims/tresvidas = SubResource( 18 )
+anims/unavida = SubResource( 19 )
+anims/unavidatransicion = SubResource( 20 )
+next/dosvidastransicion = "dosvidas"
+next/unavidatransicion = "unavida"
 
 [connection signal="body_entered" from="salto3" to="Player" method="_on_salto3_body_entered"]
 [connection signal="body_entered" from="hide" to="Reja" method="_on_hide_body_entered"]

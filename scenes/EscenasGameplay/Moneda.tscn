@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/EscenasGameplay/Moneda.gd" type="Script" id=1]
+[ext_resource path="res://audio/sfx/moneda.mp3" type="AudioStream" id=2]
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.2226, 8.98237, 1 )
 
 [sub_resource type="CylinderMesh" id=2]
@@ -44,13 +45,28 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
 }
 
+[sub_resource type="Animation" id=6]
+resource_name = "moneda"
+tracks/0/type = "value"
+tracks/0/path = NodePath("sonido/AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [node name="Moneda" type="Area"]
 transform = Transform( 2, 0, 0, 0, 2.5, 0, 0, 0, 2, 0, 0, 0 )
 script = ExtResource( 1 )
 
 [node name="Colision" type="CollisionShape" parent="."]
 transform = Transform( 0.583503, 0, 0, 0, -2.91169e-09, -0.428633, 0, 0.0666117, -1.87361e-08, 0, 0, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Textura" type="MeshInstance" parent="Colision"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 9.31323e-10, 1, 0, 0, 0 )
@@ -62,5 +78,11 @@ autoplay = "rotacion"
 anims/RESET = SubResource( 3 )
 anims/idle = SubResource( 4 )
 anims/rotacion = SubResource( 5 )
+
+[node name="sonido" type="AnimationPlayer" parent="."]
+anims/moneda = SubResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sonido"]
+stream = ExtResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_Moneda_body_entered"]
