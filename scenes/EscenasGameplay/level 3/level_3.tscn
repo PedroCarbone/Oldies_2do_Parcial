@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/EscenasGameplay/Power_Ups/hide.tscn" type="PackedScene" id=2]
@@ -12,21 +12,6 @@
 [sub_resource type="BoxShape" id=1]
 
 [sub_resource type="CubeMesh" id=2]
-
-[sub_resource type="Animation" id=3]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("../Player:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( -0.892471, 2.13021, 0.256427 ) ]
-}
 
 [sub_resource type="Animation" id=4]
 resource_name = "respawn"
@@ -465,7 +450,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9342, 9.11783, 0.256427 )
 
 [node name="animacion" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("../../Limite")
-anims/RESET = SubResource( 3 )
 anims/respawn = SubResource( 4 )
 
 [node name="PlataformaPU" type="StaticBody" parent="."]
@@ -659,15 +643,6 @@ shape = SubResource( 14 )
 [node name="Moneda" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 10.8226, 7.62939e-06 )
 
-[node name="Moneda2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 22.5871, 8.67519, 7.62939e-06 )
-
-[node name="Moneda3" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 22.5871, 13.3626, 7.62939e-06 )
-
-[node name="Moneda4" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 22.5871, 18.5877, 7.62939e-06 )
-
 [node name="Moneda5" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 38.005, 27.4299, 7.62939e-06 )
 
@@ -688,192 +663,255 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, 7.62939e-06 
 
 [node name="Moneda11" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -5.21121 )
+visible = false
 
 [node name="Moneda12" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -11.0304 )
+visible = false
 
 [node name="Moneda13" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -16.4587 )
+visible = false
 
 [node name="Moneda14" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -22.0174 )
+visible = false
 
 [node name="Moneda15" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -26.9246 )
+visible = false
 
 [node name="Moneda16" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -31.8318 )
+visible = false
 
 [node name="Moneda17" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -37.043 )
+visible = false
 
 [node name="Moneda18" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -42.2542 )
+visible = false
 
 [node name="Moneda19" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -46.7706 )
+visible = false
 
 [node name="Moneda20" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.1593, 23.4527, -51.2436 )
+visible = false
 
 [node name="Moneda22" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.3755, 27.0946, -65.2575 )
+visible = false
 
 [node name="Moneda23" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8238, 27.0946, -65.2575 )
+visible = false
 
 [node name="Moneda26" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0238, 26.9608, -65.2575 )
+visible = false
 
 [node name="Moneda27" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.5707, 26.9608, -65.2575 )
+visible = false
 
 [node name="Moneda30" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.228, 26.7545, -65.2575 )
+visible = false
 
 [node name="Moneda31" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6583, 26.7545, -65.2575 )
+visible = false
 
 [node name="Moneda34" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 27.1421, -65.2575 )
+visible = false
 
 [node name="Moneda35" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 29.7878, -65.2575 )
+visible = false
 
 [node name="Moneda36" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 32.5028, -65.2575 )
+visible = false
 
 [node name="Moneda37" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 29.7878, -65.2575 )
+visible = false
 
 [node name="Moneda38" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 32.5028, -65.2575 )
+visible = false
 
 [node name="Moneda39" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 29.7878, -65.2575 )
+visible = false
 
 [node name="Moneda40" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 32.5028, -65.2575 )
+visible = false
 
 [node name="Moneda41" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 29.7878, -65.2575 )
+visible = false
 
 [node name="Moneda42" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 32.5028, -65.2575 )
+visible = false
 
 [node name="Moneda43" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 29.7878, -65.2575 )
+visible = false
 
 [node name="Moneda44" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 32.5028, -65.2575 )
+visible = false
 
 [node name="Moneda45" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 29.7878, -65.2575 )
+visible = false
 
 [node name="Moneda46" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 32.5028, -65.2575 )
+visible = false
 
 [node name="Moneda47" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 29.7878, -65.2575 )
+visible = false
 
 [node name="Moneda48" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 32.5028, -65.2575 )
+visible = false
 
 [node name="Moneda49" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 88.2146, 35.0097, -65.2575 )
+visible = false
 
 [node name="Moneda50" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 84.6199, 35.0097, -65.2575 )
+visible = false
 
 [node name="Moneda51" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 81.2445, 35.0097, -65.2575 )
+visible = false
 
 [node name="Moneda52" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 77.6214, 35.0097, -65.2575 )
+visible = false
 
 [node name="Moneda53" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 74.0702, 35.0097, -65.2575 )
+visible = false
 
 [node name="Moneda54" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.8867, 35.0097, -65.2575 )
+visible = false
 
 [node name="Moneda55" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 67.2742, 35.0097, -65.2575 )
+visible = false
 
 [node name="Moneda56" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 83.6315, 42.6699, -65.6787 )
+visible = false
 
 [node name="Moneda57" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 80.0368, 42.6699, -65.6073 )
+visible = false
 
 [node name="Moneda58" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 76.6614, 42.6699, -65.6073 )
+visible = false
 
 [node name="Moneda59" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 73.0383, 42.6699, -65.6073 )
+visible = false
 
 [node name="Moneda60" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 69.4871, 42.6699, -65.6073 )
+visible = false
 
 [node name="Moneda61" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 66.3036, 42.6699, -65.6073 )
+visible = false
 
 [node name="Moneda62" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 62.6911, 42.6699, -65.6073 )
+visible = false
 
 [node name="Moneda63" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3529, 58.0531, -86.4577 )
+visible = false
 
 [node name="Moneda64" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 48.1694, 58.0531, -86.4577 )
+visible = false
 
 [node name="Moneda65" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 44.5569, 58.0531, -86.4577 )
+visible = false
 
 [node name="Moneda66" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3529, 58.0531, -90.3868 )
+visible = false
 
 [node name="Moneda67" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 48.1694, 58.0531, -90.3868 )
+visible = false
 
 [node name="Moneda68" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 44.5569, 58.0531, -90.3868 )
+visible = false
 
 [node name="Moneda69" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3529, 58.0531, -94.2336 )
+visible = false
 
 [node name="Moneda70" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 48.1694, 58.0531, -94.2336 )
+visible = false
 
 [node name="Moneda71" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 44.5569, 58.0531, -94.2336 )
+visible = false
 
 [node name="Moneda72" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.3529, 58.0531, -98.06 )
+visible = false
 
 [node name="Moneda73" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 48.1694, 58.0531, -98.06 )
+visible = false
 
 [node name="Moneda74" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 44.5569, 58.0531, -98.06 )
+visible = false
 
 [node name="Moneda75" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 117.125, 41.7726, -66.8487 )
+visible = false
 
 [node name="Moneda76" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 171.944, 70.294, -66.8487 )
+visible = false
 
 [node name="Moneda77" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 144.152, 53.8349, -66.8487 )
+visible = false
 
 [node name="Moneda78" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 223.071, 83.064, -66.924 )
+visible = false
 
 [node name="Moneda79" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 223.071, 86.4965, -66.924 )
+visible = false
 
 [node name="Moneda80" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 223.071, 90.2314, -66.924 )
+visible = false
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -895,7 +933,6 @@ frames = SubResource( 15 )
 [node name="hp2" type="AnimatedSprite" parent="UI/Control/HP"]
 position = Vector2( 292.087, 101.448 )
 frames = SubResource( 15 )
-frame = 1
 
 [node name="hp3" type="AnimatedSprite" parent="UI/Control/HP"]
 position = Vector2( 448.358, 101.448 )
