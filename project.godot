@@ -25,6 +25,7 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/filters/sharpen_intensity=1.0
 quality/directional_shadow/size=8140
 quality/shadow_atlas/size=16384
 quality/reflections/irradiance_max_size=2048
@@ -35,4 +36,3 @@ cpu_lightmapper/quality/ultra_quality_ray_count=9460
 quality/filters/use_fxaa=true
 quality/filters/use_debanding=true
 environment/default_environment="res://default_env.tres"
-quality/filters/sharpen_intensity=1.0
