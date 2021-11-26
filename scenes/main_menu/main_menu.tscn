@@ -74,7 +74,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("botones/settings:modulate")
+tracks/2/path = NodePath("botones/creditos:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -86,7 +86,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("botones/creditos:modulate")
+tracks/3/path = NodePath("botones/quit:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -98,7 +98,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("botones/quit:modulate")
+tracks/4/path = NodePath("Sprite:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -107,27 +107,15 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Vector2( -174, 903 ), Vector2( 1698, 903 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:position")
+tracks/5/path = NodePath("Sprite:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -174, 903 ), Vector2( 1698, 903 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Sprite:rotation_degrees")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -182,32 +170,21 @@ anims/fade_in = SubResource( 4 )
 [node name="botones" type="CanvasLayer" parent="."]
 
 [node name="play" type="Button" parent="botones"]
-margin_left = 360.0
-margin_top = 531.0
-margin_right = 810.0
-margin_bottom = 681.0
+margin_left = 684.0
+margin_top = 413.0
+margin_right = 1134.0
+margin_bottom = 563.0
 custom_fonts/font = SubResource( 1 )
 text = "JUGAR"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="settings" type="Button" parent="botones"]
-margin_left = 357.0
-margin_top = 772.0
-margin_right = 807.0
-margin_bottom = 922.0
-custom_fonts/font = SubResource( 1 )
-text = "SETTINGS"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="creditos" type="Button" parent="botones"]
-margin_left = 1004.0
-margin_top = 530.0
-margin_right = 1454.0
-margin_bottom = 680.0
+margin_left = 684.0
+margin_top = 608.0
+margin_right = 1134.0
+margin_bottom = 758.0
 custom_fonts/font = SubResource( 1 )
 text = "creditos"
 __meta__ = {
@@ -215,10 +192,10 @@ __meta__ = {
 }
 
 [node name="quit" type="Button" parent="botones"]
-margin_left = 1003.0
-margin_top = 771.0
-margin_right = 1453.0
-margin_bottom = 921.0
+margin_left = 684.0
+margin_top = 805.0
+margin_right = 1134.0
+margin_bottom = 955.0
 custom_fonts/font = SubResource( 1 )
 text = "salir"
 __meta__ = {
@@ -226,6 +203,5 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="botones/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="botones/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="botones/creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="botones/quit" to="." method="_on_quit_pressed"]
