@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=36 format=2]
-=======
-[gd_scene load_steps=38 format=2]
->>>>>>> temporizador
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -203,11 +199,7 @@ animations = [ {
 size = 39
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=19]
-size = 50
-font_data = ExtResource( 10 )
-
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=19]
 length = 0.01
 loop = true
 tracks/0/type = "value"
@@ -259,7 +251,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=20]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/HP/hp3:frame")
@@ -286,7 +278,7 @@ tracks/1/keys = {
 "values": [ true, false, true, false, true, false ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=21]
 length = 0.01
 loop = true
 tracks/0/type = "value"
@@ -326,7 +318,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=22]
 length = 0.01
 loop = true
 tracks/0/type = "value"
@@ -390,7 +382,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=23]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/HP/hp2:frame")
@@ -415,63 +407,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true, false, true, false ]
-}
-
-[sub_resource type="Animation" id=25]
-resource_name = "reset"
-length = 0.01
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Control/temporizador:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=26]
-resource_name = "tiempo"
-length = 15.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Control/temporizador:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 15 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Control/temporizador:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 15 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.988235, 0.133333, 0.133333, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Control/temporizador:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ "15", "14", "13", "12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1" ]
 }
 
 [node name="level_2" type="Spatial"]
@@ -611,7 +546,6 @@ material/0 = null
 
 [node name="hide" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6221, 76.2639, -39.7127 )
-visible = true
 
 [node name="salto3" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.079, 32.9025, -39.9444 )
@@ -773,42 +707,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="temporizador" type="Label" parent="UI/Control"]
-modulate = Color( 0.994745, 0.612889, 0.612889, 1 )
-margin_left = 1803.96
-margin_top = 56.9357
-margin_right = 1843.96
-margin_bottom = 109.936
-custom_fonts/font = SubResource( 19 )
-text = "9"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="corazones" type="AnimationPlayer" parent="UI"]
 autoplay = "tresvidas"
-anims/dosvidas = SubResource( 20 )
-anims/dosvidastransicion = SubResource( 21 )
-anims/tresvidas = SubResource( 22 )
-anims/unavida = SubResource( 23 )
-anims/unavidatransicion = SubResource( 24 )
+anims/dosvidas = SubResource( 19 )
+anims/dosvidastransicion = SubResource( 20 )
+anims/tresvidas = SubResource( 21 )
+anims/unavida = SubResource( 22 )
+anims/unavidatransicion = SubResource( 23 )
 next/dosvidastransicion = "dosvidas"
 next/unavidatransicion = "unavida"
 
-<<<<<<< HEAD
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = -10.0
 autoplay = true
-=======
-[node name="temporizador" type="AnimationPlayer" parent="UI"]
-anims/reset = SubResource( 25 )
-anims/tiempo = SubResource( 26 )
-next/tiempo = "reset"
->>>>>>> temporizador
 
 [connection signal="body_entered" from="hide" to="pared" method="_on_hide_body_entered"]
-[connection signal="temporizador" from="hide" to="." method="_on_hide_temporizador"]
 [connection signal="body_entered" from="salto3" to="Player" method="_on_salto3_body_entered"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_entered" from="Final" to="." method="_on_Final_body_entered"]
