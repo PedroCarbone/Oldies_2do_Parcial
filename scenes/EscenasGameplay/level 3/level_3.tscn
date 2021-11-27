@@ -44,7 +44,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( -23.9342, 9.11783, 0.256427 ), Vector3( -23.9342, 2.36086, 0.256427 ) ]
+"values": [ Vector3( -41.604, 9.118, 0.256 ), Vector3( -41.604, 2.361, 0.256 ) ]
 }
 
 [sub_resource type="BoxShape" id=6]
@@ -670,7 +670,6 @@ transform = Transform( 7.23659, 0, 0, 0, 27.5695, 0, 0, 0, 11.7625, 47.821, 29.3
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="recompensa"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
