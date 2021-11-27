@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://fonts/Square.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/game_over/game_over.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game_over/logo.jpg" type="Texture" id=3]
 [ext_resource path="res://scenes/EscenasGameplay/Tutorial/score.gd" type="Script" id=4]
+[ext_resource path="res://audio/Musiquita/MUSICA PERDER.mp3" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 150
@@ -183,6 +184,11 @@ position = Vector2( 1698, 903 )
 rotation = 6.28319
 scale = Vector2( 1.30813, 1.30813 )
 texture = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -23.023
+autoplay = true
 
 [connection signal="pressed" from="botones/retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="botones/menu" to="." method="_on_menu_pressed"]
