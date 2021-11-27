@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MUSICA LEVEL 3.mp3-5c84fc8e27a23967c4b66e7c17753d95.mp3str"
+
+[deps]
+
+source_file="res://audio/Musiquita/MUSICA LEVEL 3.mp3"
+dest_files=[ "res://.import/MUSICA LEVEL 3.mp3-5c84fc8e27a23967c4b66e7c17753d95.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
