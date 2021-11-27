@@ -5,6 +5,9 @@ var vidas = 3
 onready var hp = $UI/corazones
 onready var anim = $Player/animacion
 
+func _ready():
+	Global.score = 0
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
