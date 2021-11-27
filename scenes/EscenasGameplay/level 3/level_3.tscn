@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/EscenasGameplay/Power_Ups/hide.tscn" type="PackedScene" id=2]
@@ -247,7 +247,11 @@ animations = [ {
 size = 39
 font_data = ExtResource( 9 )
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="DynamicFont" id=18]
+size = 50
+font_data = ExtResource( 9 )
+
+[sub_resource type="Animation" id=19]
 length = 0.01
 loop = true
 tracks/0/type = "value"
@@ -299,7 +303,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=20]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/HP/hp3:frame")
@@ -326,7 +330,7 @@ tracks/1/keys = {
 "values": [ true, false, true, false, true, false ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=21]
 length = 0.01
 loop = true
 tracks/0/type = "value"
@@ -366,7 +370,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=22]
 length = 0.01
 loop = true
 tracks/0/type = "value"
@@ -430,7 +434,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=23]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/HP/hp2:frame")
@@ -455,6 +459,51 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true, false, true, false ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "reset"
+length = 0.01
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/tiempo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "tiempo"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/tiempo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/tiempo:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "5", "4", "3", "2", "1" ]
 }
 
 [node name="Spatial" type="Spatial"]
@@ -567,7 +616,8 @@ operation = 2
 depth = 0.787657
 
 [node name="hide" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1206, 45.7533, -66.1783 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1206, 51.1272, -66.1783 )
+visible = true
 
 [node name="Reja" type="StaticBody" parent="."]
 transform = Transform( 0.843234, 0, 0, 0, 5.14017, 0, 0, 0, 0.240838, 68.9743, 26.3312, -60.0107 )
@@ -922,15 +972,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="tiempo" type="Label" parent="UI/Control"]
+margin_left = 662.105
+margin_top = 49.7193
+margin_right = 702.105
+margin_bottom = 102.719
+custom_fonts/font = SubResource( 18 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="corazones" type="AnimationPlayer" parent="UI"]
 autoplay = "tresvidas"
-anims/dosvidas = SubResource( 18 )
-anims/dosvidastransicion = SubResource( 19 )
-anims/tresvidas = SubResource( 20 )
-anims/unavida = SubResource( 21 )
-anims/unavidatransicion = SubResource( 22 )
+anims/dosvidas = SubResource( 19 )
+anims/dosvidastransicion = SubResource( 20 )
+anims/tresvidas = SubResource( 21 )
+anims/unavida = SubResource( 22 )
+anims/unavidatransicion = SubResource( 23 )
 next/dosvidastransicion = "dosvidas"
 next/unavidatransicion = "unavida"
+
+[node name="temporizador" type="AnimationPlayer" parent="UI"]
+autoplay = "reset"
+anims/reset = SubResource( 24 )
+anims/tiempo = SubResource( 25 )
+next/tiempo = "reset"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
@@ -939,5 +1006,6 @@ autoplay = true
 
 [connection signal="body_entered" from="salto3" to="Player" method="_on_salto3_body_entered"]
 [connection signal="body_entered" from="hide" to="Reja" method="_on_hide_body_entered"]
+[connection signal="tiempo" from="hide" to="." method="_on_hide_tiempo"]
 [connection signal="body_entered" from="Limite" to="." method="_on_Limite_body_entered"]
 [connection signal="body_entered" from="Plataforma_final/Final" to="." method="_on_Final_body_entered"]

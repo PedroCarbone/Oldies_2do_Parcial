@@ -3,6 +3,7 @@ extends Spatial
 var vidas = 3
 onready var hp = $UI/corazones
 onready var respawn = $Player/animacion
+onready var tiempo = $UI/temporizador
 
 
 func _on_Limite_body_entered(_body):
@@ -20,3 +21,8 @@ func _on_Limite_body_entered(_body):
 func _on_Final_body_entered(_body):
 	get_tree().change_scene("res://scenes/victoria/victoria.tscn")
 	pass # Replace with function body.
+
+
+func _on_hide_tiempo():
+	tiempo.play("tiempo")
+	print("CORRE QUE QUEDA POCO TIEMPOOOO")
