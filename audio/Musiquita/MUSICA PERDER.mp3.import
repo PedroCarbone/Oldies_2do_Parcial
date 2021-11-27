@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MUSICA PERDER.mp3-4539137090193668e333995f67f67f75.mp3str"
+
+[deps]
+
+source_file="res://audio/Musiquita/MUSICA PERDER.mp3"
+dest_files=[ "res://.import/MUSICA PERDER.mp3-4539137090193668e333995f67f67f75.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
