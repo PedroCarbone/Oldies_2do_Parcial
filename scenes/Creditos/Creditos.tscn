@@ -128,7 +128,7 @@ tracks/9/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Button:disabled")
@@ -143,19 +143,19 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 300
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 80
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 100
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 100
 font_data = ExtResource( 2 )
 
@@ -181,7 +181,7 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Creditos"
 anims/Creditos = SubResource( 1 )
-anims/RESET = SubResource( 6 )
+anims/RESET = SubResource( 2 )
 
 [node name="texto" type="Label" parent="."]
 margin_right = 40.0
@@ -196,7 +196,7 @@ margin_top = 27.0
 margin_right = 1691.0
 margin_bottom = 342.0
 rect_pivot_offset = Vector2( -425.841, -130.611 )
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 text = "CRÉDITOS!"
 __meta__ = {
@@ -212,7 +212,7 @@ margin_top = 314.381
 margin_right = 946.519
 margin_bottom = 457.429
 rect_pivot_offset = Vector2( -425.841, -130.611 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 text = "Oldies Team"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -223,7 +223,7 @@ margin_left = 916.0
 margin_top = 291.0
 margin_right = 1544.0
 margin_bottom = 755.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -235,7 +235,7 @@ margin_right = 733.159
 margin_bottom = 115.381
 rect_scale = Vector2( 1.00352, 1.11833 )
 rect_pivot_offset = Vector2( -1655.96, -252.029 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Agustín Bosco"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -247,7 +247,7 @@ margin_top = 147.381
 margin_right = 714.159
 margin_bottom = 254.381
 rect_pivot_offset = Vector2( -1655.96, -252.029 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Pedro Carbone"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -260,7 +260,7 @@ margin_right = 272.159
 margin_bottom = 314.381
 rect_scale = Vector2( 1.17314, 1.17314 )
 rect_pivot_offset = Vector2( -1655.96, -252.029 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "lino hassan"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -272,7 +272,7 @@ margin_top = 383.381
 margin_right = 1073.32
 margin_bottom = 488.381
 rect_pivot_offset = Vector2( -1800.41, 0 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Milagros Orozco"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -284,7 +284,7 @@ margin_top = 505.381
 margin_right = 876.159
 margin_bottom = 610.381
 rect_pivot_offset = Vector2( -1800.41, 0 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Juan Andrés Viola"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -297,7 +297,7 @@ margin_left = 215.159
 margin_top = -356.619
 margin_right = 665.159
 margin_bottom = -206.619
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 disabled = true
 text = "menú"
 __meta__ = {
