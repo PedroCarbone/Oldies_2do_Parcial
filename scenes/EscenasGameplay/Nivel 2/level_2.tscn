@@ -545,6 +545,7 @@ material/0 = null
 
 [node name="hide" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6221, 76.2639, -39.7127 )
+visible = true
 
 [node name="salto3" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -111.079, 32.9025, -39.9444 )
